@@ -257,14 +257,18 @@ z-index:999;">
 </div>
 
 <script>
+<script>
+
 function updateClock(){
   const now = new Date();
+
   document.getElementById("clock").innerHTML =
-    now.toLocaleTimeString();
+  now.toLocaleTimeString();
 }
 
 setInterval(updateClock,1000);
 updateClock();
+
 
 function bukaPelajaran(nama){
 
@@ -284,7 +288,8 @@ else if(nama === "Bot Telegram"){
 alert("🤖 Bot Telegram\n\nBot Telegram bisa membalas pesan otomatis.");
 }
 
-  }
+}
+  
 </script>
   <script>
 const canvas = document.getElementById("matrixRain");
