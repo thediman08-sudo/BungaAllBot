@@ -4,11 +4,38 @@
   <title>Akademi Coding Kak</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #020617;
-      color: #e2e8f0;
-    }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: #e2e8f0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* efek background hacker */
+body::before {
+  content: "101010101010101010101010";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(0,255,0,0.08);
+  font-size: 20px;
+  line-height: 25px;
+  white-space: pre-wrap;
+  z-index: -1;
+  animation: move 20s linear infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
 
     header {
       text-align: center;
@@ -18,10 +45,11 @@
     }
 
     h1 {
-      color: #22c55e;
-      font-size: 32px;
+  color: #22c55e;
+  font-size: 32px;
+  text-shadow: 0 0 10px #22c55e,
+               0 0 20px #22c55e;
     }
-
     .subtitle {
       color: #94a3b8;
     }
@@ -32,18 +60,24 @@
       margin: auto;
     }
 
-    .card {
-      background: #0f172a;
-      border: 1px solid #22c55e55;
-      border-radius: 18px;
-      padding: 20px;
-      margin: 15px 0;
-      box-shadow: 0 0 15px #22c55e22;
+    ..card {
+  background: #0f172a;
+  border: 1px solid #22c55e55;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 15px 0;
+
+  box-shadow: 0 0 15px rgba(0,255,0,0.2);
+  transition: 0.3s;
     }
 
     .card h2 {
       color: #38bdf8;
     }
+    .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0,255,0,0.4);
+      }
 
     .tag {
       display: inline-block;
