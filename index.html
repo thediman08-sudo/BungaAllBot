@@ -145,11 +145,22 @@ footer {
   padding: 25px;
   color: #64748b;
 }
+
+#matrixRain{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+  opacity:0.25;
+  }
 </style>
 </head>
 
 <body>
 <div class="matrix"></div>
+  <canvas id="matrixRain"></canvas>
 
 <header>
   <h1>💻 DedeViss Cyber with Bunga Academy</h1>
@@ -259,6 +270,58 @@ function bukaPelajaran(nama){
   alert("Membuka pelajaran: " + nama + " 😆");
 }
 </script>
+  <script>
+const canvas = document.getElementById("matrixRain");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const chars =
+"01アイウエオカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+
+for(let i = 0; i < columns; i++){
+  drops[i] = 1;
+}
+
+function drawMatrix(){
+
+  ctx.fillStyle = "rgba(2,6,23,0.08)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#00ff88";
+  ctx.font = fontSize + "px monospace";
+
+  for(let i = 0; i < drops.length; i++){
+
+    const text =
+    chars[Math.floor(Math.random()*chars.length)];
+
+    ctx.fillText(
+      text,
+      i * fontSize,
+      drops[i] * fontSize
+    );
+
+    if(
+      drops[i] * fontSize > canvas.height
+      &&
+      Math.random() > 0.975
+    ){
+      drops[i] = 0;
+    }
+
+    drops[i]++;
+  }
+}
+
+setInterval(drawMatrix,35);
+  </script>
 
 </body>
 </html>
