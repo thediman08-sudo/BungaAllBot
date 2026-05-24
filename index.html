@@ -1,40 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Akademi Coding Kak</title>
-  <style>
-    body {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akademi Coding DedeViss</title>
+
+<style>
+body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: black;
+  background: #020617;
   color: #e2e8f0;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* efek background hacker */
+/* Background hacker */
 body::before {
-  content: "101010101010101010101010";
+  content: "1010101010101010101010101010101010101010";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  color: rgba(0,255,0,0.08);
-  font-size: 20px;
-  line-height: 25px;
-  white-space: pre-wrap;
+  color: rgba(0,255,0,0.05);
+  font-size: 18px;
+  line-height: 30px;
   z-index: -1;
-  animation: move 20s linear infinite;
+  animation: hackerMove 20s linear infinite;
 }
 
-@keyframes move {
+@keyframes hackerMove {
   from {
     transform: translateY(-50px);
   }
   to {
     transform: translateY(50px);
   }
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg,#001b12,#013220);
+  border-bottom: 2px solid #00ff88;
+}
+
+h1 {
+  color: #00ff88;
+  text-shadow: 
+    0 0 10px #00ff88,
+    0 0 20px #00ff88;
+}
+
+.subtitle {
+  color: #94a3b8;
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #0f172a;
+  border: 1px solid rgba(0,255,136,0.3);
+  border-radius: 18px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 0 15px rgba(0,255,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0,255,0,0.4);
+}
+
+.card h2 {
+  color: #38bdf8;
+}
+
+.tag {
+  display: inline-block;
+  background: #064e3b;
+  color: #86efac;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 4px;
+  font-size: 14px;
+}
+
+button {
+  background: #00ff88;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #64748b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>💻 Akademi Coding Kak</h1>
+  <p class="subtitle">
+    Catatan belajar coding, Termux, web, bot, dan server dari nol.
+  </p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>🚀 Progress Hari Ini</h2>
+<p>
+Kak berhasil membuat website pertama secara gratis memakai GitHub Pages.
+</p>
+
+<span class="tag">GitHub</span>
+<span class="tag">HTML</span>
+<span class="tag">GitHub Pages</span>
+</div>
+
+<div class="card">
+<h2>📚 Pelajaran 1: Website Pertama</h2>
+
+<p>Yang sudah dipelajari:</p>
+
+<p>✅ Membuat repository</p>
+<p>✅ Membuat file index.html</p>
+<p>✅ Commit changes</p>
+<p>✅ Mengaktifkan GitHub Pages</p>
+<p>✅ Membuka website online sendiri</p>
+</div>
+
+<div class="card">
+<h2>🧠 Materi Berikutnya</h2>
+
+<p>1. HTML dasar</p>
+<p>2. CSS untuk tampilan</p>
+<p>3. Termux dan Python</p>
+<p>4. Bot Telegram</p>
+<p>5. Server sederhana</p>
+</div>
+
+<div class="card">
+<h2>🤖 Project Impian</h2>
+
+<p>
+Membangun sistem pribadi:
+web, bot, automation, dan AI Bunga.
+</p>
+
+<button onclick="alert('Semangat belajar Kak 😆')">
+Mulai Belajar
+</button>
+
+</div>
+
+</div>
+
+<footer>
+Dibuat dari HP bersama Bunga 🌼
+</footer>
+
+</body>
+</html>  }
 }
 
     header {
