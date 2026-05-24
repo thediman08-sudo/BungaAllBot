@@ -253,7 +253,6 @@ web, bot, automation, dan AI Bunga.
 <button onclick="bukaPelajaran('HTML Dasar')">
 📚 Mulai Belajar
 </button>
-</button>
 
 </div>
 
@@ -290,8 +289,8 @@ function updateClock(){
 
 setInterval(updateClock,1000);
 updateClock();
-
-
+  }
+  
 function bukaPelajaran(nama){
 
 <section id="materiBox" class="materi-box">
@@ -307,7 +306,7 @@ function bukaPelajaran(nama){
   let judul = "";
   let isi = "";
 
-  if(nama === "HTML"){
+  if(nama === "HTML" || nama === "HTML Dasar"){
     judul = "📚 Pelajaran HTML";
     isi = "HTML adalah dasar untuk membuat kerangka website. Contohnya: judul, paragraf, tombol, gambar, dan link.";
   }
