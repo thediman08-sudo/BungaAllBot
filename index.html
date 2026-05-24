@@ -267,8 +267,24 @@ setInterval(updateClock,1000);
 updateClock();
 
 function bukaPelajaran(nama){
-  alert("Membuka pelajaran: " + nama + " 😆");
+
+if(nama === "HTML"){
+alert("📚 HTML\n\nHTML adalah dasar membuat website.\nContoh: judul, tulisan, gambar.");
 }
+
+else if(nama === "CSS"){
+alert("🎨 CSS\n\nCSS digunakan untuk membuat tampilan website menjadi keren.");
+}
+
+else if(nama === "Termux"){
+alert("💻 Termux\n\nTermux digunakan untuk belajar coding dan menjalankan script di HP.");
+}
+
+else if(nama === "Bot Telegram"){
+alert("🤖 Bot Telegram\n\nBot Telegram bisa membalas pesan otomatis.");
+}
+
+  }
 </script>
   <script>
 const canvas = document.getElementById("matrixRain");
