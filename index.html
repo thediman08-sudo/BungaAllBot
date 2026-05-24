@@ -1,40 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Belajar Coding Kak</title>
-
+  <title>Akademi Coding Kak</title>
   <style>
-    body{
-      font-family: Arial;
-      background:#0f172a;
-      color:white;
-      text-align:center;
-      padding:20px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: #e2e8f0;
     }
 
-    .box{
-      background:#1e293b;
-      border-radius:20px;
-      padding:25px;
-      max-width:500px;
-      margin:auto;
-      box-shadow:0 0 20px rgba(0,0,0,0.4);
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #020617, #064e3b);
+      border-bottom: 2px solid #22c55e;
     }
 
-    h1{
-      color:#38bdf8;
+    h1 {
+      color: #22c55e;
+      font-size: 32px;
     }
 
-    .menu{
-      background:#334155;
-      margin:12px;
-      padding:15px;
-      border-radius:15px;
+    .subtitle {
+      color: #94a3b8;
     }
 
-    button{
-      background:#38bdf8;
-      border:none;
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: #0f172a;
+      border: 1px solid #22c55e55;
+      border-radius: 18px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 0 15px #22c55e22;
+    }
+
+    .card h2 {
+      color: #38bdf8;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #064e3b;
+      color: #86efac;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      background: #22c55e;
+      color: #020617;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>💻 Akademi Coding Kak</h1>
+  <p class="subtitle">Catatan belajar coding, Termux, web, bot, dan server dari nol.</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>🚀 Progress Hari Ini</h2>
+    <p>Kak berhasil membuat website pertama secara gratis memakai GitHub Pages.</p>
+    <span class="tag">GitHub</span>
+    <span class="tag">HTML</span>
+    <span class="tag">GitHub Pages</span>
+  </div>
+
+  <div class="card">
+    <h2>📚 Pelajaran 1: Website Pertama</h2>
+    <p>Yang sudah dipelajari:</p>
+    <p>✅ Membuat repository</p>
+    <p>✅ Membuat file index.html</p>
+    <p>✅ Commit changes</p>
+    <p>✅ Mengaktifkan GitHub Pages</p>
+    <p>✅ Membuka website online sendiri</p>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Materi Berikutnya</h2>
+    <p>1. HTML dasar</p>
+    <p>2. CSS untuk tampilan</p>
+    <p>3. Termux dan Python</p>
+    <p>4. Bot Telegram</p>
+    <p>5. Server sederhana</p>
+  </div>
+
+  <div class="card">
+    <h2>🤖 Project Impian</h2>
+    <p>Membangun sistem pribadi: web, bot, automation, dan AI Bunga.</p>
+    <button onclick="alert('Belajar pelan-pelan, Kak. Yang penting jalan terus!')">
+      Mulai Belajar
+    </button>
+  </div>
+
+</div>
+
+<footer>
+  Dibuat dari HP bersama Bunga 🌼
+</footer>
+
+</body>
+</html>      border:none;
       padding:12px 20px;
       border-radius:10px;
       color:white;
