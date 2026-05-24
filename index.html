@@ -257,7 +257,12 @@ web, bot, automation, dan AI Bunga.
 </div>
 
 </div>
-
+<section id="materiBox" class="materi-box">
+  <h2 id="judulMateri">📚 Pilih Pelajaran</h2>
+  <p id="isiMateri">
+    Klik menu HTML, CSS, Termux, atau Bot Telegram untuk membuka materi.
+  </p>
+</section>
 <footer>
 Dibuat dari HP bersama Bunga 🌼
 </footer>
@@ -279,28 +284,17 @@ z-index:999;">
 </div>
 
 <script>
-
+<script>
 function updateClock(){
   const now = new Date();
 
   document.getElementById("clock").innerHTML =
-  now.toLocaleTimeString();
+  now.toLocaleTimeString('id-ID');
 }
 
 setInterval(updateClock,1000);
 updateClock();
-  }
-  
-function bukaPelajaran(nama){
 
-<section id="materiBox" class="materi-box">
-  <h2 id="judulMateri">📚 Pilih Pelajaran</h2>
-  <p id="isiMateri">
-    Klik menu HTML, CSS, Termux, atau Bot Telegram untuk membuka materi.
-  </p>
-</section>
-
-<script>
 function bukaPelajaran(nama){
 
   let judul = "";
@@ -308,22 +302,22 @@ function bukaPelajaran(nama){
 
   if(nama === "HTML" || nama === "HTML Dasar"){
     judul = "📚 Pelajaran HTML";
-    isi = "HTML adalah dasar untuk membuat kerangka website. Contohnya: judul, paragraf, tombol, gambar, dan link.";
+    isi = "HTML adalah dasar untuk membuat kerangka website.";
   }
 
   else if(nama === "CSS"){
     judul = "🎨 Pelajaran CSS";
-    isi = "CSS digunakan untuk mempercantik tampilan website. Contohnya: warna, ukuran tulisan, animasi, background, dan posisi elemen.";
+    isi = "CSS digunakan untuk mempercantik website.";
   }
 
   else if(nama === "Termux"){
     judul = "💻 Pelajaran Termux";
-    isi = "Termux adalah aplikasi terminal di Android. Dengan Termux, Kak bisa belajar command, coding, bot Telegram, dan tools pemrograman langsung dari HP.";
+    isi = "Termux dipakai untuk coding dan menjalankan tools di HP.";
   }
 
   else if(nama === "Bot Telegram"){
     judul = "🤖 Pelajaran Bot Telegram";
-    isi = "Bot Telegram adalah program otomatis yang bisa membalas pesan, mengirim foto, memberi menu, dan menjalankan perintah dari user.";
+    isi = "Bot Telegram bisa membalas pesan otomatis.";
   }
 
   document.getElementById("judulMateri").innerText = judul;
