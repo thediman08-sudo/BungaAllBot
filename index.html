@@ -124,12 +124,21 @@ h1 {
 button {
   background: #00ff88;
   border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 12px 22px;
+  border-radius: 12px;
   color: black;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00ff88;
 }
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 20px #00ff88,
+    0 0 40px #00ff88;
+  }
 
 footer {
   text-align: center;
