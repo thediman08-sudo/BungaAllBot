@@ -70,10 +70,17 @@ header {
 
 h1 {
   color: #00ff88;
-  text-shadow: 
-    0 0 10px #00ff88,
-    0 0 20px #00ff88;
+  animation: glowText 1.5s infinite alternate;
 }
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 5px #00ff88;
+  }
+  to {
+    text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
+  }
+    }
 
 .subtitle {
   color: #94a3b8;
