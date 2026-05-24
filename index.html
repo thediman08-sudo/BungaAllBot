@@ -176,6 +176,21 @@ Kak berhasil membuat website pertama secara gratis memakai GitHub Pages.
 
 <div class="card">
 <h2>🧠 Materi Berikutnya</h2>
+  <div class="tag" onclick="bukaPelajaran('HTML')">
+HTML
+</div>
+
+<div class="tag" onclick="bukaPelajaran('CSS')">
+CSS
+</div>
+
+<div class="tag" onclick="bukaPelajaran('Termux')">
+Termux
+</div>
+
+<div class="tag" onclick="bukaPelajaran('Bot Telegram')">
+Bot Telegram
+</div>
 
 <p>1. HTML dasar</p>
 <p>2. CSS untuk tampilan</p>
@@ -192,8 +207,9 @@ Membangun sistem pribadi:
 web, bot, automation, dan AI Bunga.
 </p>
 
-<button onclick="alert('Semangat belajar Kak 😆')">
-Mulai Belajar
+<button onclick="bukaPelajaran('HTML Dasar')">
+📚 Mulai Belajar
+</button>
 </button>
 
 </div>
@@ -203,6 +219,37 @@ Mulai Belajar
 <footer>
 Dibuat dari HP bersama Bunga 🌼
 </footer>
+
+  <div id="clock"
+style="
+position:fixed;
+top:15px;
+right:15px;
+background:#001b12;
+padding:10px 15px;
+border:1px solid #00ff88;
+border-radius:10px;
+color:#00ff88;
+font-weight:bold;
+box-shadow:0 0 10px #00ff88;
+z-index:999;">
+00:00:00
+</div>
+
+<script>
+function updateClock(){
+  const now = new Date();
+  document.getElementById("clock").innerHTML =
+    now.toLocaleTimeString();
+}
+
+setInterval(updateClock,1000);
+updateClock();
+
+function bukaPelajaran(nama){
+  alert("Membuka pelajaran: " + nama + " 😆");
+}
+</script>
 
 </body>
 </html>
