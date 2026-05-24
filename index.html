@@ -155,6 +155,29 @@ footer {
   z-index:-2;
   opacity:0.25;
   }
+
+  .materi-box{
+  margin: 30px auto;
+  padding: 20px;
+  width: 85%;
+  max-width: 700px;
+  background: rgba(0, 20, 0, 0.85);
+  border: 1px solid #00ff66;
+  border-radius: 15px;
+  color: #b6ffcc;
+  box-shadow: 0 0 20px #00ff66;
+  text-align: left;
+}
+
+.materi-box h2{
+  color: #00ff66;
+  text-shadow: 0 0 10px #00ff66;
+}
+
+.materi-box p{
+  font-size: 16px;
+  line-height: 1.6;
+}
 </style>
 </head>
 
@@ -271,24 +294,42 @@ updateClock();
 
 function bukaPelajaran(nama){
 
-if(nama === "HTML"){
-alert("📚 HTML\n\nHTML adalah dasar membuat website.\nContoh: judul, tulisan, gambar.");
-}
+<section id="materiBox" class="materi-box">
+  <h2 id="judulMateri">📚 Pilih Pelajaran</h2>
+  <p id="isiMateri">
+    Klik menu HTML, CSS, Termux, atau Bot Telegram untuk membuka materi.
+  </p>
+</section>
 
-else if(nama === "CSS"){
-alert("🎨 CSS\n\nCSS digunakan untuk membuat tampilan website menjadi keren.");
-}
+<script>
+function bukaPelajaran(nama){
 
-else if(nama === "Termux"){
-alert("💻 Termux\n\nTermux digunakan untuk belajar coding dan menjalankan script di HP.");
-}
+  let judul = "";
+  let isi = "";
 
-else if(nama === "Bot Telegram"){
-alert("🤖 Bot Telegram\n\nBot Telegram bisa membalas pesan otomatis.");
-}
+  if(nama === "HTML"){
+    judul = "📚 Pelajaran HTML";
+    isi = "HTML adalah dasar untuk membuat kerangka website. Contohnya: judul, paragraf, tombol, gambar, dan link.";
+  }
 
+  else if(nama === "CSS"){
+    judul = "🎨 Pelajaran CSS";
+    isi = "CSS digunakan untuk mempercantik tampilan website. Contohnya: warna, ukuran tulisan, animasi, background, dan posisi elemen.";
+  }
+
+  else if(nama === "Termux"){
+    judul = "💻 Pelajaran Termux";
+    isi = "Termux adalah aplikasi terminal di Android. Dengan Termux, Kak bisa belajar command, coding, bot Telegram, dan tools pemrograman langsung dari HP.";
+  }
+
+  else if(nama === "Bot Telegram"){
+    judul = "🤖 Pelajaran Bot Telegram";
+    isi = "Bot Telegram adalah program otomatis yang bisa membalas pesan, mengirim foto, memberi menu, dan menjalankan perintah dari user.";
+  }
+
+  document.getElementById("judulMateri").innerText = judul;
+  document.getElementById("isiMateri").innerText = isi;
 }
-  
 </script>
 <script>
 const canvas = document.getElementById("matrixRain");
