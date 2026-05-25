@@ -177,6 +177,19 @@
       max-width: 330px;
     }
 
+    .terminal-box {
+  font-family: monospace;
+  color: #00ff88;
+  background: rgba(0,0,0,0.75);
+  border: 1px solid #00ff88;
+  box-shadow: 0 0 20px rgba(0,255,136,0.5);
+}
+
+.terminal-box p {
+  margin: 8px 0;
+  text-shadow: 0 0 10px #00ff88;
+}
+
     .ai-panel button {
       background: #00ff88;
       color: black;
@@ -198,7 +211,7 @@
 
 <div id="loadingScreen">
   <h2>SYSTEM BOOTING...</h2>
-  <p>ACCESS GRANTED</p>
+  <p>█ ACCESS GRANTED █</p>
 </div>
 
 <canvas id="matrixRain"></canvas>
@@ -213,7 +226,14 @@
   </div>
 </header>
 
-<section>
+  <section class="terminal-box">
+  <h2>💻 Terminal System</h2>
+  <p>&gt; SYSTEM ONLINE</p>
+  <p>&gt; USER CONNECTED</p>
+  <p>&gt; BUNGA AI READY</p>
+  </section>
+  
+  <section>
   <h2>🚀 Progress Hari Ini</h2>
   <p>Kak berhasil membuat website pertama secara gratis memakai GitHub Pages.</p>
   <span class="tag">GitHub</span>
@@ -349,7 +369,7 @@ setInterval(drawMatrix, 35);
 setTimeout(() => {
   document.getElementById("loadingScreen")
   .style.display = "none";
-}, 2500);
+}, 1800);
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
