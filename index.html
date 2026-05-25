@@ -84,17 +84,15 @@ header {
 
 h1 {
   color: #00ff88;
-  font-size: 42px;
+  font-size: 46px;
   font-weight: bold;
   letter-spacing: 3px;
   animation: glowText 1.5s infinite alternate;
 
   text-shadow:
-    0 0 8px #00ff88,
-    0 0 18px #00ff88,
-    0 0 35px rgba(0,255,136,0.8),
-    0 0 55px rgba(0,255,136,0.5);
-}
+0 0 10px #00ff88,
+0 0 25px #00ff88,
+0 0 50px rgba(0,255,136,0.9);
 
   .ai-menu {
   display: inline-block;
@@ -115,6 +113,31 @@ h1 {
     0 0 15px #00ff88,
     0 0 30px rgba(0,255,136,0.7);
   }
+
+  .ai-panel {
+  display: none;
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,20,10,0.95);
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 0 30px #00ff88;
+  z-index: 999;
+  text-align: center;
+}
+
+.ai-panel button {
+  margin-top: 15px;
+  padding: 8px 18px;
+  background: #00ff88;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+}
   
 @keyframes glowText {
   from {
@@ -446,10 +469,21 @@ window.addEventListener("resize", () => {
 });
 </script>
   <script>
+<div id="aiPanel" class="ai-panel">
+  <h3>🤖 BUNGA AI ONLINE</h3>
+  <p>System siap membantu belajar cyber.</p>
+  <button onclick="tutupAI()">Tutup</button>
+</div>
+
+<script>
 function bukaAI() {
-  alert("🤖 Bunga AI Online\nSystem siap membantu belajar cyber.");
+  document.getElementById("aiPanel").style.display = "block";
 }
-  </script>
+
+function tutupAI() {
+  document.getElementById("aiPanel").style.display = "none";
+}
+</script>
 
 </body>
 </html>
