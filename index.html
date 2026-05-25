@@ -99,15 +99,22 @@ h1 {
   .ai-menu {
   display: inline-block;
   margin-top: 15px;
-  padding: 10px 18px;
+  padding: 12px 22px;
   color: #00ff88;
   border: 1px solid #00ff88;
-  border-radius: 20px;
-  background: rgba(0, 255, 136, 0.08);
-  box-shadow: 0 0 15px rgba(0,255,136,0.5);
+  border-radius: 25px;
+  background: rgba(0,255,136,0.08);
+  box-shadow: 0 0 10px rgba(0,255,136,0.4);
   font-weight: bold;
-  letter-spacing: 1px;
-}
+  }
+
+  .ai-menu:hover {
+  transform: scale(1.05);
+  background: rgba(0,255,136,0.15);
+  box-shadow:
+    0 0 15px #00ff88,
+    0 0 30px rgba(0,255,136,0.7);
+  }
   
 @keyframes glowText {
   from {
@@ -247,9 +254,9 @@ footer {
   <p class="subtitle">
     Catatan belajar coding, Termux, web, bot, dan server dari nol.
   </p>
-  <div class="ai-menu">
-  🤖 Bunga AI Online
-</div>
+  <div class="ai-menu" onclick="bukaAI()">
+🤖 Bunga AI Online
+  </div>
 </header>
 
 <div class="container">
@@ -438,6 +445,11 @@ window.addEventListener("resize", () => {
     canvas.height = window.innerHeight;
 });
 </script>
+  <script>
+function bukaAI() {
+  alert("🤖 Bunga AI Online\nSystem siap membantu belajar cyber.");
+}
+  </script>
 
 </body>
 </html>
