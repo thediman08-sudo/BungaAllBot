@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akademi Coding Dede Viss</title>
+<title> SYSTEM ONLINE // CYBER LEARNING </title>
 
 <style>
 body {
@@ -64,20 +64,36 @@ body::before {
 header {
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg,#001b12,#013220);
-  border-bottom: 2px solid #00ff88;
+
+  /* Transparan biar matrix kelihatan */
+  background: rgba(0, 20, 10, 0.25);
+
+  /* Blur kaca cyber */
+  backdrop-filter: blur(5px);
+
+  /* Border neon cyber */
+  border-bottom: 1px solid #00ff88;
+
+  /* Glow tipis biar hidup */
+  box-shadow:
+    0 0 15px rgba(0,255,136,0.4);
+
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
   color: #00ff88;
-  font-size: 38px;
+  font-size: 42px;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
   animation: glowText 1.5s infinite alternate;
+
   text-shadow:
-    0 0 10px #00ff88,
-    0 0 20px #00ff88,
-    0 0 40px #00ff88;
+    0 0 8px #00ff88,
+    0 0 18px #00ff88,
+    0 0 35px rgba(0,255,136,0.8),
+    0 0 55px rgba(0,255,136,0.5);
 }
   
 @keyframes glowText {
@@ -214,7 +230,7 @@ footer {
   <canvas id="matrixRain"></canvas>
 
 <header>
-  <h1>💻 DedeViss Cyber Academy</h1>
+<h1>SYSTEM ONLINE // CYBER LEARNING</h1>
   <p class="subtitle">
     Catatan belajar coding, Termux, web, bot, dan server dari nol.
   </p>
