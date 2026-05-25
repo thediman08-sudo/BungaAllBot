@@ -1,410 +1,294 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> SYSTEM ONLINE // CYBER LEARNING </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSTEM ONLINE // CYBER LEARNING</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #020617;
-  color: #e2e8f0;
-  overflow-x: hidden;
-}
-
-/* Background hacker */
-body::before {
-  content: "1010101010101010101010101010101010101010";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: rgba(0,255,0,0.05);
-  font-size: 18px;
-  line-height: 30px;
-  z-index: -1;
-  animation: hackerMove 20s linear infinite;
-}
-
-@keyframes hackerMove {
-  from {
-    transform: translateY(-50px);
-  }
-  to {
-    transform: translateY(50px);
-  }
-}
-
-.matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(rgba(0,255,136,0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,136,0.12) 1px, transparent 1px);
-  animation: gridMove 2s linear infinite;
-}
-
-@keyframes gridMove {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 40px 40px;
-  }
-}
-  
-header {
-  text-align: center;
-  padding: 40px 20px;
-
-  /* Transparan biar matrix kelihatan */
-  background: rgba(0, 20, 10, 0.25);
-
-  /* Blur kaca cyber */
-  backdrop-filter: blur(5px);
-
-  /* Border neon cyber */
-  border-bottom: 1px solid #00ff88;
-
-  /* Glow tipis biar hidup */
-  box-shadow:
-    0 0 15px rgba(0,255,136,0.4);
-
-  position: relative;
-  z-index: 2;
-}
-
-h1 {
-  color: #00ff88;
-  font-size: 46px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  animation: glowText 1.5s infinite alternate;
-
-  text-shadow:
-0 0 10px #00ff88,
-0 0 25px #00ff88,
-0 0 50px rgba(0,255,136,0.9);
-
-  .ai-menu {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 22px;
-  color: #00ff88;
-  border: 1px solid #00ff88;
-  border-radius: 25px;
-  background: rgba(0,255,136,0.08);
-  box-shadow: 0 0 10px rgba(0,255,136,0.4);
-  font-weight: bold;
-  }
-
-  .ai-menu:hover {
-  transform: scale(1.05);
-  background: rgba(0,255,136,0.15);
-  box-shadow:
-    0 0 15px #00ff88,
-    0 0 30px rgba(0,255,136,0.7);
-  }
-
-  .ai-panel {
-  display: none;
-  position: fixed;
-  top: 35%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,20,10,0.95);
-  border: 1px solid #00ff88;
-  color: #00ff88;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 0 30px #00ff88;
-  z-index: 999;
-  text-align: center;
-}
-
-.ai-panel button {
-  margin-top: 15px;
-  padding: 8px 18px;
-  background: #00ff88;
-  border: none;
-  border-radius: 15px;
-  font-weight: bold;
-}
-  
-@keyframes glowText {
-  from {
-    text-shadow: 0 0 5px #00ff88;
-  }
-  to {
-    text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
-  }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-.subtitle {
-  color: #94a3b8;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: #020b08;
+      color: white;
+      overflow-x: hidden;
+    }
 
-.container {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
-}
+    #matrixRain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: black;
+    }
 
-.card {
-  background: #0f172a;
-  border: 1px solid rgba(0,255,136,0.3);
-  border-radius: 18px;
-  padding: 20px;
-  margin: 15px 0;
-  box-shadow: 0 0 15px rgba(0,255,0,0.2);
-  transition: 0.3s;
-}
+    .clock {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.5);
+      box-shadow: 0 0 12px #00ff88;
+      z-index: 10;
+      font-weight: bold;
+    }
 
-.card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(0,255,0,0.4);
-}
+    header {
+      text-align: center;
+      padding: 45px 20px;
+      background: rgba(0, 20, 10, 0.25);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid #00ff88;
+      box-shadow: 0 0 18px rgba(0,255,136,0.4);
+    }
 
-.card h2 {
-  color: #38bdf8;
-}
+    h1 {
+      color: #00ff88;
+      font-size: 40px;
+      letter-spacing: 3px;
+      text-shadow:
+        0 0 10px #00ff88,
+        0 0 25px #00ff88,
+        0 0 50px rgba(0,255,136,0.9);
+    }
 
-.tag {
-  display: inline-block;
-  background: #064e3b;
-  color: #86efac;
-  padding: 6px 10px;
-  border-radius: 8px;
-  margin: 4px;
-  font-size: 14px;
-  cursor: pointer;
-}
-button {
-  background: #00ff88;
-  border: none;
-  padding: 12px 22px;
-  border-radius: 12px;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 10px #00ff88;
-}
+    .subtitle {
+      margin-top: 18px;
+      color: #b7c7c2;
+      font-size: 14px;
+    }
 
-button:hover {
-  transform: scale(1.08);
-  box-shadow:
-    0 0 20px #00ff88,
-    0 0 40px #00ff88;
-}
+    .ai-menu {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 22px;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+      border-radius: 25px;
+      background: rgba(0,255,136,0.08);
+      box-shadow: 0 0 15px rgba(0,255,136,0.7);
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-.tag:hover{
-  transform: scale(1.08);
-  background: #00ff88;
-  color: black;
-  box-shadow:
-    0 0 15px #00ff88,
-    0 0 30px #00ff88;
-  transition: 0.3s;
-}
-  
-footer {
-  text-align: center;
-  padding: 25px;
-  color: #64748b;
-}
+    .ai-menu:hover {
+      transform: scale(1.05);
+      background: rgba(0,255,136,0.16);
+    }
 
-#matrixRain{
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-2;
-  opacity:0.45;
-}
+    section {
+      width: 88%;
+      margin: 22px auto;
+      padding: 24px;
+      background: rgba(5, 15, 35, 0.88);
+      border: 1px solid rgba(0,255,136,0.35);
+      border-radius: 18px;
+      box-shadow: 0 0 18px rgba(0,255,136,0.25);
+    }
 
-.materi-box{
-  margin: 30px auto;
-  padding: 20px;
-  width: 85%;
-  max-width: 700px;
-  background: rgba(0, 20, 0, 0.85);
-  border: 1px solid #00ff66;
-  border-radius: 15px;
-  color: #b6ffcc;
-  box-shadow: 0 0 20px #00ff66;
-  text-align: left;
-  animation: muncul 0.4s ease;
-  }
+    h2 {
+      color: #45c7ff;
+      margin-bottom: 18px;
+    }
 
-.materi-box h2{
-  color: #00ff66;
-  text-shadow: 0 0 10px #00ff66;
-}
+    p, li {
+      line-height: 1.7;
+      font-size: 15px;
+    }
 
-.materi-box p{
-  font-size: 16px;
-  line-height: 1.6;
-}
-  @keyframes muncul{
-  from{
-    opacity:0;
-    transform:translateY(15px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-  
-</style>
+    ul, ol {
+      margin-left: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 10px 6px 4px 0;
+      padding: 8px 14px;
+      background: rgba(0,255,136,0.18);
+      color: #00ff88;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .tag:hover {
+      background: rgba(0,255,136,0.35);
+      box-shadow: 0 0 12px #00ff88;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #00ff88;
+      color: black;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 0 15px #00ff88;
+      cursor: pointer;
+    }
+
+    .materi-box {
+      width: 78%;
+      margin: 35px auto;
+      padding: 28px;
+      background: rgba(0, 20, 10, 0.75);
+      border: 1px solid #00ff88;
+      border-radius: 18px;
+      box-shadow: 0 0 25px #00ff88;
+    }
+
+    .materi-box h2 {
+      color: #00ff88;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 10px;
+      color: #9ca3af;
+    }
+
+    .ai-panel {
+      display: none;
+      position: fixed;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,20,10,0.96);
+      border: 1px solid #00ff88;
+      color: #00ff88;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 0 30px #00ff88;
+      z-index: 999;
+      text-align: center;
+      width: 80%;
+      max-width: 330px;
+    }
+
+    .ai-panel button {
+      background: #00ff88;
+      color: black;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      section, .materi-box {
+        width: 92%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="matrix"></div>
-  <canvas id="matrixRain"></canvas>
+
+<canvas id="matrixRain"></canvas>
+
+<div class="clock" id="clock">00:00:00</div>
 
 <header>
-<h1>SYSTEM ONLINE // CYBER LEARNING</h1>
-  <p class="subtitle">
-    Catatan belajar coding, Termux, web, bot, dan server dari nol.
-  </p>
+  <h1>SYSTEM ONLINE // CYBER LEARNING</h1>
+  <p class="subtitle">Catatan belajar coding, Termux, web, bot, dan server dari nol.</p>
+
   <div class="ai-menu" onclick="bukaAI()">
-🤖 Bunga AI Online
+    🤖 Bunga AI Online
   </div>
 </header>
 
-<div class="container">
-
-<div class="card">
-<h2>🚀 Progress Hari Ini</h2>
-<p>
-Kak berhasil membuat website pertama secara gratis memakai GitHub Pages.
-</p>
-
-<span class="tag">GitHub</span>
-<span class="tag">HTML</span>
-<span class="tag">GitHub Pages</span>
-</div>
-
-<div class="card">
-<h2>📚 Pelajaran 1: Website Pertama</h2>
-
-<p>Yang sudah dipelajari:</p>
-
-<p>✅ Membuat repository</p>
-<p>✅ Membuat file index.html</p>
-<p>✅ Commit changes</p>
-<p>✅ Mengaktifkan GitHub Pages</p>
-<p>✅ Membuka website online sendiri</p>
-</div>
-
-<div class="card">
-<h2>🧠 Materi Berikutnya</h2>
-  <div class="tag" onclick="bukaPelajaran('HTML')">
-HTML
-</div>
-
-<div class="tag" onclick="bukaPelajaran('CSS')">
-CSS
-</div>
-
-<div class="tag" onclick="bukaPelajaran('Termux')">
-Termux
-</div>
-
-<div class="tag" onclick="bukaPelajaran('Bot Telegram')">
-Bot Telegram
-</div>
-
-<p>1. HTML dasar</p>
-<p>2. CSS untuk tampilan</p>
-<p>3. Termux dan Python</p>
-<p>4. Bot Telegram</p>
-<p>5. Server sederhana</p>
-</div>
-
-<div class="card">
-<h2>🤖 Project Impian</h2>
-
-<p>
-Membangun sistem pribadi:
-web, bot, automation, dan AI Bunga.
-</p>
-
-<button onclick="bukaPelajaran('HTML Dasar')">
-📚 Mulai Belajar
-</button>
-
-</div>
-
-</div>
-<section id="materiBox" class="materi-box">
-  <h2 id="judulMateri">📚 Pilih Pelajaran</h2>
-  <p id="isiMateri">
-    Klik menu HTML, CSS, Termux, atau Bot Telegram untuk membuka materi.
-  </p>
+<section>
+  <h2>🚀 Progress Hari Ini</h2>
+  <p>Kak berhasil membuat website pertama secara gratis memakai GitHub Pages.</p>
+  <span class="tag">GitHub</span>
+  <span class="tag">HTML</span>
+  <span class="tag">GitHub Pages</span>
 </section>
+
+<section>
+  <h2>📚 Pelajaran 1: Website Pertama</h2>
+  <p>Yang sudah dipelajari:</p>
+  <ul>
+    <li>✅ Membuat repository</li>
+    <li>✅ Membuat file index.html</li>
+    <li>✅ Commit changes</li>
+    <li>✅ Mengaktifkan GitHub Pages</li>
+    <li>✅ Membuka website online sendiri</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🧠 Materi Berikutnya</h2>
+  <span class="tag" onclick="bukaMateri('html')">HTML</span>
+  <span class="tag" onclick="bukaMateri('css')">CSS</span>
+  <span class="tag" onclick="bukaMateri('termux')">Termux</span>
+  <span class="tag" onclick="bukaMateri('bot')">Bot Telegram</span>
+
+  <ol>
+    <li>HTML dasar</li>
+    <li>CSS untuk tampilan</li>
+    <li>Termux dan Python</li>
+    <li>Bot Telegram</li>
+    <li>Server sederhana</li>
+  </ol>
+</section>
+
+<section>
+  <h2>🤖 Project Impian</h2>
+  <p>Membangun sistem pribadi: web, bot, automation, dan AI Bunga.</p>
+  <button onclick="bukaMateri('html')">📚 Mulai Belajar</button>
+</section>
+
+<div class="materi-box">
+  <h2 id="judulMateri">📚 Pilih Pelajaran</h2>
+  <p id="isiMateri">Klik menu HTML, CSS, Termux, atau Bot Telegram untuk membuka materi.</p>
+</div>
+
 <footer>
-Dibuat dari HP bersama Bunga 🌼
+  Dibuat dari HP bersama Bunga 🌼
 </footer>
 
-  <div id="clock"
-style="
-position:fixed;
-top:15px;
-right:15px;
-background:#001b12;
-padding:10px 15px;
-border:1px solid #00ff88;
-border-radius:10px;
-color:#00ff88;
-font-weight:bold;
-box-shadow:0 0 10px #00ff88;
-z-index:999;">
-00:00:00
+<div id="aiPanel" class="ai-panel">
+  <h3>🤖 BUNGA AI ONLINE</h3>
+  <p>System siap membantu belajar cyber.</p>
+  <button onclick="tutupAI()">Tutup</button>
 </div>
 
 <script>
-function updateClock(){
+function updateClock() {
   const now = new Date();
-
-  document.getElementById("clock").innerHTML =
-  now.toLocaleTimeString('id-ID');
+  document.getElementById("clock").innerText =
+    now.toLocaleTimeString("id-ID");
 }
-
-setInterval(updateClock,1000);
+setInterval(updateClock, 1000);
 updateClock();
 
-function bukaPelajaran(nama){
-
+function bukaMateri(pelajaran) {
   let judul = "";
   let isi = "";
 
-  if(nama === "HTML" || nama === "HTML Dasar"){
-    judul = "📚 Pelajaran HTML";
-    isi = "HTML adalah dasar untuk membuat kerangka website.";
-  }
-
-  else if(nama === "CSS"){
+  if (pelajaran === "html") {
+    judul = "📘 Pelajaran HTML";
+    isi = "HTML adalah kerangka dasar untuk membuat halaman website.";
+  } else if (pelajaran === "css") {
     judul = "🎨 Pelajaran CSS";
-    isi = "CSS digunakan untuk mempercantik website.";
-  }
-
-  else if(nama === "Termux"){
+    isi = "CSS digunakan untuk mempercantik tampilan website.";
+  } else if (pelajaran === "termux") {
     judul = "💻 Pelajaran Termux";
-    isi = "Termux dipakai untuk coding dan menjalankan tools di HP.";
-  }
-
-  else if(nama === "Bot Telegram"){
+    isi = "Termux membantu menjalankan perintah Linux langsung dari HP.";
+  } else if (pelajaran === "bot") {
     judul = "🤖 Pelajaran Bot Telegram";
     isi = "Bot Telegram bisa membalas pesan otomatis.";
   }
@@ -412,8 +296,15 @@ function bukaPelajaran(nama){
   document.getElementById("judulMateri").innerText = judul;
   document.getElementById("isiMateri").innerText = isi;
 }
-</script>
-<script>
+
+function bukaAI() {
+  document.getElementById("aiPanel").style.display = "block";
+}
+
+function tutupAI() {
+  document.getElementById("aiPanel").style.display = "none";
+}
+
 const canvas = document.getElementById("matrixRain");
 const ctx = canvas.getContext("2d");
 
@@ -422,67 +313,45 @@ canvas.height = window.innerHeight;
 
 const huruf = "01アイウエオTERMUXBOTHTMLCSS";
 const chars = huruf.split("");
-
 const fontSize = 18;
-const columns = canvas.width / fontSize;
+let columns = canvas.width / fontSize;
+let drops = [];
 
-const drops = [];
-
-for(let x = 0; x < columns; x++){
-    drops[x] = 1;
+for (let x = 0; x < columns; x++) {
+  drops[x] = 1;
 }
 
-function drawMatrix(){
-    ctx.fillStyle = "rgba(0,0,0,0.08)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
+function drawMatrix() {
+  ctx.fillStyle = "rgba(0,0,0,0.08)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
 
-    ctx.fillStyle = "#00ff00";
-    ctx.font = fontSize + "px monospace";
+  ctx.fillStyle = "#00ff00";
+  ctx.font = fontSize + "px monospace";
 
-    for(let i = 0; i < drops.length; i++){
+  for (let i = 0; i < drops.length; i++) {
+    const text = chars[Math.floor(Math.random() * chars.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        const text =
-        chars[Math.floor(Math.random() * chars.length)];
-
-        ctx.fillText(
-            text,
-            i * fontSize,
-            drops[i] * fontSize
-        );
-
-        if(
-            drops[i] * fontSize > canvas.height
-            && Math.random() > 0.975
-        ){
-            drops[i] = 0;
-        }
-
-        drops[i]++;
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
     }
+
+    drops[i]++;
+  }
 }
 
 setInterval(drawMatrix, 35);
 
 window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}); 
-</script>
-  
-  <div id="aiPanel" class="ai-panel">
-  <h3>🤖 BUNGA AI ONLINE</h3>
-  <p>System siap membantu belajar cyber.</p>
-  <button onclick="tutupAI()">Tutup</button>
-</div>
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  columns = canvas.width / fontSize;
+  drops = [];
 
-<script>
-function bukaAI() {
-  document.getElementById("aiPanel").style.display = "block";
-}
-
-function tutupAI() {
-  document.getElementById("aiPanel").style.display = "none";
-}
+  for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+  }
+});
 </script>
 
 </body>
