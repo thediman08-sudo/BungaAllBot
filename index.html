@@ -196,8 +196,12 @@
 
 <body>
 
-<canvas id="matrixRain"></canvas>
+<div id="loadingScreen">
+  <h2>SYSTEM BOOTING...</h2>
+  <p>ACCESS GRANTED</p>
+</div>
 
+<canvas id="matrixRain"></canvas>
 <div class="clock" id="clock">00:00:00</div>
 
 <header>
@@ -341,6 +345,11 @@ function drawMatrix() {
 }
 
 setInterval(drawMatrix, 35);
+
+setTimeout(() => {
+  document.getElementById("loadingScreen")
+  .style.display = "none";
+}, 2500);
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
