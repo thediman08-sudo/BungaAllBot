@@ -444,20 +444,18 @@ GitHub cocok untuk membuat website gratis dari HP.
 `;
   }
 
-  document.getElementById("judulMateri")
-.innerText = judul;
-
-document.getElementById("isiMateri")
-.innerText = isi;
+  document.getElementById("judulMateri").innerText = judul;
+document.getElementById("isiMateri").innerText = isi;
 
 document.getElementById("pesanAI")
 .innerHTML =
 "😎 Sip frends! Sekarang belajar " +
 judul;
+}
 
 function bukaAI() {
   document.getElementById("aiPanel").style.display = "block";
-}
+  }
 
 function tutupAI() {
   document.getElementById("aiPanel").style.display = "none";
