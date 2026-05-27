@@ -345,20 +345,95 @@ function bukaMateri(pelajaran) {
   let isi = "";
 
   if (pelajaran === "html") {
-    judul = "📘 Pelajaran HTML";
-    isi = "HTML adalah kerangka dasar untuk membuat halaman website.";
+  judul = "📘 Pelajaran HTML";
+
+  isi = `
+HTML adalah dasar website.
+
+Fungsi:
+• Membuat struktur website
+
+Contoh:
+<h1>Halo Dunia</h1>
+
+HTML dipakai untuk judul, teks, tombol, gambar, dll.
+`;
+}
   } else if (pelajaran === "css") {
-    judul = "🎨 Pelajaran CSS";
-    isi = "CSS digunakan untuk mempercantik tampilan website.";
+  judul = "🎨 Pelajaran CSS";
+
+  isi = `
+CSS digunakan untuk mempercantik website.
+
+Fungsi:
+• Mengatur warna
+• Ukuran tulisan
+• Posisi tampilan
+
+Contoh:
+h1 {
+ color: green;
+}
+
+CSS bikin web jadi keren dan tidak polos.
+`;
   } else if (pelajaran === "termux") {
-    judul = "💻 Pelajaran Termux";
-    isi = "Termux membantu menjalankan perintah Linux langsung dari HP.";
+  judul = "💻 Pelajaran Termux";
+
+  isi = `
+Termux adalah terminal Linux di Android.
+
+Fungsi:
+• Menjalankan Python
+• Membuat bot Telegram
+• Menjalankan script
+
+Perintah awal:
+pkg update
+pkg upgrade
+
+Termux cocok untuk belajar coding dari HP.
+`;
   } else if (pelajaran === "bot") {
-    judul = "🤖 Pelajaran Bot Telegram";
-    isi = "Bot Telegram bisa membalas pesan otomatis.";
+  judul = "🤖 Pelajaran Bot Telegram";
+
+  isi = `
+Bot Telegram adalah robot otomatis di Telegram.
+
+Fungsi:
+• Membalas chat otomatis
+• Kirim pesan otomatis
+• Menjalankan perintah
+
+Contoh:
+Halo = bot membalas otomatis
+
+Bot dibuat memakai:
+• BotFather
+• Token Bot
+• Python / Termux
+
+Cocok untuk belajar automation dari HP.
+`;
+}
   }else if (pelajaran === "github") {
   judul = "🐙 Pelajaran GitHub";
-  isi = "GitHub digunakan untuk menyimpan project website secara online.";
+
+  isi = `
+GitHub adalah tempat menyimpan project coding online.
+
+Fungsi:
+• Menyimpan website
+• Backup project
+• Membuat web gratis
+
+Langkah dasar:
+1. Buat Repository
+2. Upload index.html
+3. Aktifkan GitHub Pages
+
+GitHub cocok untuk membuat website gratis dari HP.
+`;
   }
   
 
