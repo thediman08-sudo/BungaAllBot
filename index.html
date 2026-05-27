@@ -233,7 +233,7 @@
   <p>&gt; SYSTEM ONLINE</p>
 <p>&gt; USER CONNECTED</p>
 <p>&gt; BUNGA AI READY</p>
-<p id="typingText">&gt; WAITING COMMAND...</p>
+<p id="typingText">&gt; </p>
   </section>
   
   <section>
@@ -496,17 +496,27 @@ setInterval(drawMatrix, 35);
 ];
 
 let indexPesan = 0;
+let indexHuruf = 0;
 
-setInterval(() => {
-  document.getElementById("typingText")
-  .innerText = pesanTerminal[indexPesan];
+function ketikTerminal() {
+  const target = document.getElementById("typingText");
+  const pesan = pesanTerminal[indexPesan];
 
-  indexPesan++;
+  target.innerText = pesan.substring(0, indexHuruf);
 
-  if(indexPesan >= pesanTerminal.length){
-    indexPesan = 0;
+  indexHuruf++;
+
+  if (indexHuruf > pesan.length) {
+    indexHuruf = 0;
+    indexPesan++;
+
+    if (indexPesan >= pesanTerminal.length) {
+      indexPesan = 0;
+    }
   }
-}, 2000);
+}
+
+setInterval(ketikTerminal, 120);
 
 setTimeout(() => {
   document.getElementById("loadingScreen")
