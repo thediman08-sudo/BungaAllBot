@@ -295,8 +295,8 @@ Termux
   </button>
 </section>
 
-<div id="videoMentor" style="display:none; text-align:center; margin:20px;">
-
+<div id="videoMentor" class="video-mode" style="display:none;">
+  
   <video width="90%" controls autoplay>
     <source src="video-bukmentor.mp4" type="video/mp4">
   </video>
@@ -472,16 +472,17 @@ judul;
 
 function bukaVideo() {
 
+  document.querySelector("header").style.display = "none";
+  document.querySelectorAll("section").forEach(sec => {
+    sec.style.display = "none";
+  });
+  document.querySelector(".materi-box").style.display = "none";
+  document.querySelector("footer").style.display = "none";
+
   document.getElementById("videoMentor")
   .style.display = "block";
-
-  window.scrollTo({
-    top: document.getElementById("videoMentor")
-    .offsetTop,
-    behavior: "smooth"
-  });
-
   }
+  
 function bukaAI() {
   document.getElementById("aiPanel")
   .style.display = "block";
