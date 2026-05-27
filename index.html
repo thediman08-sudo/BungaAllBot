@@ -236,9 +236,17 @@
   <section>
   <h2>🚀 Progress Hari Ini</h2>
   <p>Kak berhasil membuat website pertama secara gratis memakai GitHub Pages.</p>
-  <span class="tag">GitHub</span>
-  <span class="tag">HTML</span>
-  <span class="tag">GitHub Pages</span>
+  <span class="tag" onclick="bukaMateri('github')">
+GitHub
+</span>
+
+<span class="tag" onclick="bukaMateri('html')">
+HTML
+</span>
+
+<span class="tag" onclick="bukaMateri('termux')">
+Termux
+</span>
 </section>
 
 <section>
@@ -345,7 +353,11 @@ function bukaMateri(pelajaran) {
   } else if (pelajaran === "bot") {
     judul = "🤖 Pelajaran Bot Telegram";
     isi = "Bot Telegram bisa membalas pesan otomatis.";
+  }else if (pelajaran === "github") {
+  judul = "🐙 Pelajaran GitHub";
+  isi = "GitHub digunakan untuk menyimpan project website secara online.";
   }
+  
 
   document.getElementById("judulMateri").innerText = judul;
   document.getElementById("isiMateri").innerText = isi;
