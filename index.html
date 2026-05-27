@@ -444,9 +444,16 @@ GitHub cocok untuk membuat website gratis dari HP.
 `;
   }
 
-  document.getElementById("judulMateri").innerText = judul;
-  document.getElementById("isiMateri").innerText = isi;
-}
+  document.getElementById("judulMateri")
+.innerText = judul;
+
+document.getElementById("isiMateri")
+.innerText = isi;
+
+document.getElementById("pesanAI")
+.innerHTML =
+"😎 Sip frends! Sekarang belajar " +
+judul;
 
 function bukaAI() {
   document.getElementById("aiPanel").style.display = "block";
@@ -462,7 +469,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const huruf = "01アイウエオTERMUXBOTHTMLCSS";
+const huruf = "BUNGADEDEVISSTERMUXBOTHTMLCSS";
 const chars = huruf.split("");
 const fontSize = 18;
 let columns = canvas.width / fontSize;
