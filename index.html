@@ -122,10 +122,12 @@
       cursor: pointer;
     }
 
-    .tag:hover {
-      background: rgba(0,255,136,0.35);
-      box-shadow: 0 0 12px #00ff88;
-    }
+    ..tag:hover {
+  transform: scale(1.08);
+  transition: 0.2s;
+  background: rgba(0,255,136,0.35);
+  box-shadow: 0 0 12px #00ff88;
+}
 
     button {
       margin-top: 15px;
@@ -229,8 +231,9 @@
   <section class="terminal-box">
   <h2>💻 Terminal System</h2>
   <p>&gt; SYSTEM ONLINE</p>
-  <p>&gt; USER CONNECTED</p>
-  <p>&gt; BUNGA AI READY</p>
+<p>&gt; USER CONNECTED</p>
+<p>&gt; BUNGA AI READY</p>
+<p id="typingText">&gt; WAITING COMMAND...</p>
   </section>
   
   <section>
