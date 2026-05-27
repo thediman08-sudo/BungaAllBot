@@ -341,14 +341,14 @@ setInterval(updateClock, 1000);
 updateClock();
 
 function bukaMateri(pelajaran) {
+
   let judul = "";
   let isi = "";
 
   if (pelajaran === "html") {
-  if (pelajaran === "html") {
-  judul = "📘 Pelajaran HTML";
+    judul = "📘 Pelajaran HTML";
 
-  isi = `
+    isi = `
 HTML adalah dasar website.
 
 Fungsi:
@@ -360,10 +360,10 @@ Contoh:
 HTML dipakai untuk judul, teks, tombol, gambar, dll.
 `;
 
-} else if (pelajaran === "css") {
-  judul = "🎨 Pelajaran CSS";
+  } else if (pelajaran === "css") {
+    judul = "🎨 Pelajaran CSS";
 
-  isi = `
+    isi = `
 CSS digunakan untuk mempercantik website.
 
 Fungsi:
@@ -379,10 +379,10 @@ h1 {
 CSS bikin web jadi keren dan tidak polos.
 `;
 
-} else if (pelajaran === "termux") {
-  judul = "💻 Pelajaran Termux";
+  } else if (pelajaran === "termux") {
+    judul = "💻 Pelajaran Termux";
 
-  isi = `
+    isi = `
 Termux adalah terminal Linux di Android.
 
 Fungsi:
@@ -397,10 +397,10 @@ pkg upgrade
 Termux cocok untuk belajar coding dari HP.
 `;
 
-} else if (pelajaran === "bot") {
-  judul = "🤖 Pelajaran Bot Telegram";
+  } else if (pelajaran === "bot") {
+    judul = "🤖 Pelajaran Bot Telegram";
 
-  isi = `
+    isi = `
 Bot Telegram adalah robot otomatis di Telegram.
 
 Fungsi:
@@ -419,10 +419,10 @@ Bot dibuat memakai:
 Cocok untuk belajar automation dari HP.
 `;
 
-} else if (pelajaran === "github") {
-  judul = "🐙 Pelajaran GitHub";
+  } else if (pelajaran === "github") {
+    judul = "🐙 Pelajaran GitHub";
 
-  isi = `
+    isi = `
 GitHub adalah tempat menyimpan project coding online.
 
 Fungsi:
@@ -437,8 +437,8 @@ Langkah dasar:
 
 GitHub cocok untuk membuat website gratis dari HP.
 `;
-}
-  
+  }
+
   document.getElementById("judulMateri").innerText = judul;
   document.getElementById("isiMateri").innerText = isi;
 }
