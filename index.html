@@ -212,8 +212,15 @@
 <body>
 
 <div id="loadingScreen">
-  <h2>SYSTEM BOOTING...</h2>
-  <p>█ ACCESS GRANTED █</p>
+
+  <h2 id="loadingText">
+    SYSTEM BOOTING...
+  </h2>
+
+  <p id="loadingStatus">
+    █ ACCESS GRANTED █
+  </p>
+
 </div>
 
 <canvas id="matrixRain"></canvas>
@@ -527,13 +534,36 @@ function ketikTerminal() {
 }
 
 setInterval(ketikTerminal, 120);
-ketikTerminal();
+
+/* TEMPEL DI SINI */
+const loadingPesan = [
+  "SYSTEM BOOTING...",
+  "CHECKING DATABASE...",
+  "CONNECTING AI...",
+  "ACCESS GRANTED"
+];
+
+let loadIndex = 0;
+
+const loadingAnim = setInterval(() => {
+
+  document.getElementById("loadingText")
+  .innerText = loadingPesan[loadIndex];
+
+  loadIndex++;
+
+  if(loadIndex >= loadingPesan.length){
+    clearInterval(loadingAnim);
+  }
+
+}, 450);
 
 setTimeout(() => {
   document.getElementById("loadingScreen")
   .style.display = "none";
-}, 1800);
+}, 2200);
 
+/* sebelum ini */
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
