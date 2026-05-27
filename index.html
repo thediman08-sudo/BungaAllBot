@@ -295,6 +295,14 @@ Termux
   </button>
 </section>
 
+<div id="videoMentor" style="display:none; text-align:center; margin:20px;">
+
+  <video width="90%" controls autoplay>
+    <source src="video-bukmentor.mp4" type="video/mp4">
+  </video>
+
+</div>
+
 <div class="materi-box">
   <h2 id="judulMateri">📚 Pilih Pelajaran</h2>
 <p id="isiMateri">
@@ -463,9 +471,17 @@ judul;
 }
 
 function bukaVideo() {
-  alert("🎥 Video Buk Mentor akan tampil di sini");
-}
 
+  document.getElementById("videoMentor")
+  .style.display = "block";
+
+  window.scrollTo({
+    top: document.getElementById("videoMentor")
+    .offsetTop,
+    behavior: "smooth"
+  });
+
+  }
 function bukaAI() {
   document.getElementById("aiPanel")
   .style.display = "block";
