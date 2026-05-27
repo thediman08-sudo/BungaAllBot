@@ -345,6 +345,7 @@ function bukaMateri(pelajaran) {
   let isi = "";
 
   if (pelajaran === "html") {
+  if (pelajaran === "html") {
   judul = "📘 Pelajaran HTML";
 
   isi = `
@@ -358,8 +359,8 @@ Contoh:
 
 HTML dipakai untuk judul, teks, tombol, gambar, dll.
 `;
-}
-  } else if (pelajaran === "css") {
+
+} else if (pelajaran === "css") {
   judul = "🎨 Pelajaran CSS";
 
   isi = `
@@ -377,7 +378,8 @@ h1 {
 
 CSS bikin web jadi keren dan tidak polos.
 `;
-  } else if (pelajaran === "termux") {
+
+} else if (pelajaran === "termux") {
   judul = "💻 Pelajaran Termux";
 
   isi = `
@@ -394,7 +396,8 @@ pkg upgrade
 
 Termux cocok untuk belajar coding dari HP.
 `;
-  } else if (pelajaran === "bot") {
+
+} else if (pelajaran === "bot") {
   judul = "🤖 Pelajaran Bot Telegram";
 
   isi = `
@@ -415,8 +418,8 @@ Bot dibuat memakai:
 
 Cocok untuk belajar automation dari HP.
 `;
-}
-  }else if (pelajaran === "github") {
+
+} else if (pelajaran === "github") {
   judul = "🐙 Pelajaran GitHub";
 
   isi = `
@@ -434,7 +437,7 @@ Langkah dasar:
 
 GitHub cocok untuk membuat website gratis dari HP.
 `;
-  }
+}
   
 
   document.getElementById("judulMateri").innerText = judul;
