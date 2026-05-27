@@ -290,7 +290,9 @@ Termux
 <section>
   <h2>🤖 Project Impian</h2>
   <p>Membangun sistem pribadi: web, bot, automation, dan AI Bunga.</p>
-  <button onclick="bukaMateri('html')">📚 Mulai Belajar</button>
+  <button onclick="bukaVideo()">
+📚 Mulai Belajar
+  </button>
 </section>
 
 <div class="materi-box">
@@ -460,8 +462,13 @@ document.getElementById("pesanAI")
 judul;
 }
 
+function bukaVideo() {
+  alert("🎥 Video Buk Mentor akan tampil di sini");
+}
+
 function bukaAI() {
-  document.getElementById("aiPanel").style.display = "block";
+  document.getElementById("aiPanel")
+  .style.display = "block";
   }
 
 function tutupAI() {
