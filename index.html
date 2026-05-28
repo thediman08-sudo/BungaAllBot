@@ -491,22 +491,25 @@ judul;
 
 function bukaVideo() {
 
-  document.querySelector("header").style.display = "none";
-  document.querySelectorAll("section").forEach(sec => {
+  document.querySelector("header")
+  .style.display = "none";
+
+  document.querySelectorAll("section")
+  .forEach(sec => {
     sec.style.display = "none";
   });
-  document.querySelector(".materi-box")
-.style.display = "block";
 
-document.querySelector("footer")
-.style.display = "block";
-});
-  document.querySelector("footer").style.display = "none";
+  document.querySelector(".materi-box")
+  .style.display = "none";
+
+  document.querySelector("footer")
+  .style.display = "none";
 
   document.getElementById("videoMentor")
   .style.display = "block";
-  }
-  const video =
+}
+
+const video =
 document.getElementById("videoPembuka");
 
 video.addEventListener("ended", () => {
@@ -524,8 +527,11 @@ video.addEventListener("ended", () => {
 
   document.querySelector(".materi-box")
   .style.display = "block";
+
+  document.querySelector("footer")
+  .style.display = "block";
 });
-  
+
 function bukaAI() {
   document.getElementById("aiPanel")
   .style.display = "block";
