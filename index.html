@@ -752,12 +752,38 @@ style="margin-top:20px;">
 
 </div>
 
-<div id="video" style="display:none;">
-<h1>HALAMAN VIDEO</h1>
+<div id="video" style="display:none;" class="materi-box">
+
+<h2>🎥 Video Pembelajaran</h2>
+
+<p>Di sini nanti video mentor Bunga tampil.</p>
+
 </div>
 
-<div id="materi" style="display:none;">
-<h1>HALAMAN MATERI</h1>
+<div id="materi" style="display:none;" class="materi-box">
+
+<h2>📚 Materi Pembelajaran</h2>
+
+<input id="inputBelajar"
+type="text"
+placeholder="contoh: belajar html"
+style="
+width:80%;
+padding:12px;
+border-radius:10px;
+border:none;
+font-size:16px;">
+
+<br><br>
+
+<button onclick="jawabAI()">
+Cari Materi
+</button>
+
+<div id="hasilBelajar"
+style="margin-top:20px;">
+</div>
+
 </div>
   <script>
 function bukaHalaman(nama){
