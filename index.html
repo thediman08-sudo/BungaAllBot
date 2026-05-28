@@ -252,7 +252,9 @@
 </head>
 
 <body>
-  <div class="menuNavigasi">
+  <div id="menuNavigasi"
+class="menuNavigasi"
+style="display:none;">
 
 <button onclick="bukaHalaman('utama')">
 🏠 Home
@@ -586,9 +588,14 @@ video.addEventListener("ended", () => {
   .style.display = "block";
 
   document.querySelector("footer")
-  .style.display = "block";
-});
+.style.display = "block";
 
+document.getElementById("menuNavigasi")
+.style.display = "block";
+
+bukaHalaman("materi");
+});
+  
 function bukaAI() {
   document.getElementById("aiPanel")
   .style.display = "block";
