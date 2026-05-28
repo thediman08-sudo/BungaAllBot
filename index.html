@@ -800,9 +800,22 @@ document.getElementById("video")
 document.getElementById("materi")
 .style.display = "none";
 
-document.getElementById(nama)
+if(nama === "utama"){
+document.getElementById("utama")
 .style.display = "block";
 }
+
+if(nama === "video"){
+document.getElementById("video")
+.style.display = "block";
+}
+
+if(nama === "materi"){
+document.getElementById("materi")
+.style.display = "block";
+}
+
+    }
 </script>
   
 </body>
