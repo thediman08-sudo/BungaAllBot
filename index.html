@@ -225,6 +225,18 @@
   height: 100vh;
   object-fit: cover;
 }
+    #textCyber {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00ff88;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 20px #00ff88;
+  z-index: 999999;
+  font-family: monospace;
+    }
   </style>
 </head>
 
@@ -315,8 +327,12 @@ Termux
 </section>
 
 <div id="videoMentor" class="video-mode" style="display:none;">
-  
-<video id="videoPembuka" width="90%" controls autoplay>
+
+  <div id="textCyber">
+    SYSTEM ONLINE ⚡
+  </div>
+
+  <video id="videoPembuka" width="90%" controls autoplay>
 <source src="fiksVideoCyberLearningBunga.mp4" type="video/mp4">
 </video>
 
