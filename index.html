@@ -316,7 +316,7 @@ Termux
 
 <div id="videoMentor" class="video-mode" style="display:none;">
   
-<video width="90%" controls autoplay>
+<video id="videoPembuka" width="90%" controls autoplay>
 <source src="fiksVideoCyberLearningBunga.mp4" type="video/mp4">
 </video>
 
@@ -495,12 +495,36 @@ function bukaVideo() {
   document.querySelectorAll("section").forEach(sec => {
     sec.style.display = "none";
   });
-  document.querySelector(".materi-box").style.display = "none";
+  document.querySelector(".materi-box")
+.style.display = "block";
+
+document.querySelector("footer")
+.style.display = "block";
+});
   document.querySelector("footer").style.display = "none";
 
   document.getElementById("videoMentor")
   .style.display = "block";
   }
+  const video =
+document.getElementById("videoPembuka");
+
+video.addEventListener("ended", () => {
+
+  document.getElementById("videoMentor")
+  .style.display = "none";
+
+  document.querySelector("header")
+  .style.display = "block";
+
+  document.querySelectorAll("section")
+  .forEach(sec => {
+    sec.style.display = "block";
+  });
+
+  document.querySelector(".materi-box")
+  .style.display = "block";
+});
   
 function bukaAI() {
   document.getElementById("aiPanel")
