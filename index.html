@@ -226,17 +226,33 @@
   object-fit: cover;
 }
     #textCyber {
+  po#textCyber {
   position: absolute;
-  top: 12%;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 8%;
+  left: 5%;
   color: #00ff88;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: bold;
-  text-shadow: 0 0 20px #00ff88;
+  text-shadow: 0 0 15px #00ff88;
   z-index: 999999;
   font-family: monospace;
-    }
+  text-align: left;
+  animation: neonBlink 1.2s infinite;
+}
+
+@keyframes neonBlink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
   </style>
 </head>
 
@@ -329,7 +345,8 @@ Termux
 <div id="videoMentor" class="video-mode" style="display:none;">
 
   <div id="textCyber">
-    SYSTEM ONLINE ⚡
+  SYSTEM ONLINE ⚡<br>
+  WELCOME TO BUNGA ACADEMY 🌼
   </div>
 
   <video id="videoPembuka" width="90%" controls autoplay>
