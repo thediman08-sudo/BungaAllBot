@@ -746,5 +746,30 @@ style="margin-top:20px;">
 </div>
 
 </div>
+
+<div id="video" style="display:none;">
+<h1>HALAMAN VIDEO</h1>
+</div>
+
+<div id="materi" style="display:none;">
+<h1>HALAMAN MATERI</h1>
+</div>
+  <script>
+function bukaHalaman(nama){
+
+document.getElementById("utama")
+.style.display = "none";
+
+document.getElementById("video")
+.style.display = "none";
+
+document.getElementById("materi")
+.style.display = "none";
+
+document.getElementById(nama)
+.style.display = "block";
+}
+</script>
+  
 </body>
 </html>
