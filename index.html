@@ -1,286 +1,268 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SYSTEM ONLINE // CYBER LEARNING</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYSTEM ONLINE // CYBER LEARNING</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #020b08;
-      color: white;
-      overflow-x: hidden;
-    }
-
-    #matrixRain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: black;
-    }
-
-    .clock {
-      position: fixed;
-      top: 12px;
-      right: 12px;
-      color: #00ff88;
-      border: 1px solid #00ff88;
-      padding: 8px 12px;
-      border-radius: 10px;
-      background: rgba(0,0,0,0.5);
-      box-shadow: 0 0 12px #00ff88;
-      z-index: 10;
-      font-weight: bold;
-    }
-
-    header {
-      text-align: center;
-      padding: 45px 20px;
-      background: rgba(0, 20, 10, 0.25);
-      backdrop-filter: blur(5px);
-      border-bottom: 1px solid #00ff88;
-      box-shadow: 0 0 18px rgba(0,255,136,0.4);
-    }
-
-    h1 {
-      color: #00ff88;
-      font-size: 40px;
-      letter-spacing: 3px;
-      text-shadow:
-        0 0 10px #00ff88,
-        0 0 25px #00ff88,
-        0 0 50px rgba(0,255,136,0.9);
-    }
-
-    .subtitle {
-      margin-top: 18px;
-      color: #b7c7c2;
-      font-size: 14px;
-    }
-
-    .ai-menu {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 12px 22px;
-      color: #00ff88;
-      border: 1px solid #00ff88;
-      border-radius: 25px;
-      background: rgba(0,255,136,0.08);
-      box-shadow: 0 0 15px rgba(0,255,136,0.7);
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .ai-menu:hover {
-      transform: scale(1.05);
-      background: rgba(0,255,136,0.16);
-    }
-
-    section {
-      width: 88%;
-      margin: 22px auto;
-      padding: 24px;
-      background: rgba(5, 15, 35, 0.88);
-      border: 1px solid rgba(0,255,136,0.35);
-      border-radius: 18px;
-      box-shadow: 0 0 18px rgba(0,255,136,0.25);
-    }
-
-    h2 {
-      color: #45c7ff;
-      margin-bottom: 18px;
-    }
-
-    p, li {
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    ul, ol {
-      margin-left: 20px;
-    }
-
-    .tag {
-      display: inline-block;
-      margin: 10px 6px 4px 0;
-      padding: 8px 14px;
-      background: rgba(0,255,136,0.18);
-      color: #00ff88;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    ..tag:hover {
-  transform: scale(1.08);
-  transition: 0.2s;
-  background: rgba(0,255,136,0.35);
-  box-shadow: 0 0 12px #00ff88;
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-    button {
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #00ff88;
-      color: black;
-      border: none;
-      border-radius: 12px;
-      font-weight: bold;
-      box-shadow: 0 0 15px #00ff88;
-      cursor: pointer;
-    }
-
-    .materi-box {
-      width: 78%;
-      margin: 35px auto;
-      padding: 28px;
-      background: rgba(0, 20, 10, 0.75);
-      border: 1px solid #00ff88;
-      border-radius: 18px;
-      box-shadow: 0 0 25px #00ff88;
-    }
-
-    .materi-box h2 {
-      color: #00ff88;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 10px;
-      color: #9ca3af;
-    }
-
-    .ai-panel {
-      display: none;
-      position: fixed;
-      top: 35%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0,20,10,0.96);
-      border: 1px solid #00ff88;
-      color: #00ff88;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 0 30px #00ff88;
-      z-index: 999;
-      text-align: center;
-      width: 80%;
-      max-width: 330px;
-    }
-
-    .terminal-box {
-  font-family: monospace;
-  color: #00ff88;
-  background: rgba(0,0,0,0.75);
-  border: 1px solid #00ff88;
-  box-shadow: 0 0 20px rgba(0,255,136,0.5);
+body{
+  font-family:Arial, sans-serif;
+  background:#020b08;
+  color:white;
+  overflow-x:hidden;
 }
 
-.terminal-box p {
-  margin: 8px 0;
-  text-shadow: 0 0 10px #00ff88;
+#matrixRain{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  background:black;
 }
 
-    .ai-panel button {
-      background: #00ff88;
-      color: black;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-      }
-
-      section, .materi-box {
-        width: 92%;
-      }
-    }
-    
-    .video-mode {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  z-index: 99999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.clock{
+  position:fixed;
+  top:12px;
+  right:12px;
+  color:#00ff88;
+  border:1px solid #00ff88;
+  padding:8px 12px;
+  border-radius:10px;
+  background:rgba(0,0,0,0.5);
+  box-shadow:0 0 12px #00ff88;
+  z-index:10;
+  font-weight:bold;
 }
 
-.video-mode video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-    #textCyber {
-  position: absolute;
-  bottom: 6%;
-  left: 5%;
-  color: #00ff88;
-  font-size: 18px;
-  font-weight: bold;
-  text-shadow: 0 0 15px #00ff88;
-  z-index: 999999;
-  font-family: monospace;
-  text-align: left;
-  animation: neonBlink 0.8s infinite;
+.menuNavigasi{
+  position:fixed;
+  top:12px;
+  left:12px;
+  z-index:999;
 }
 
-@keyframes neonBlink {
-  0%, 100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
+button{
+  padding:12px 20px;
+  background:#00ff88;
+  color:black;
+  border:none;
+  border-radius:12px;
+  font-weight:bold;
+  box-shadow:0 0 15px #00ff88;
+  cursor:pointer;
 }
-  </style>
+
+header{
+  text-align:center;
+  padding:45px 20px;
+  background:rgba(0,20,10,0.25);
+  border-bottom:1px solid #00ff88;
+  box-shadow:0 0 18px rgba(0,255,136,0.4);
+}
+
+h1{
+  color:#00ff88;
+  font-size:34px;
+  letter-spacing:3px;
+  text-shadow:0 0 10px #00ff88,0 0 25px #00ff88;
+}
+
+.subtitle{
+  margin-top:18px;
+  color:#b7c7c2;
+  font-size:14px;
+}
+
+.ai-menu{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 22px;
+  color:#00ff88;
+  border:1px solid #00ff88;
+  border-radius:25px;
+  background:rgba(0,255,136,0.08);
+  box-shadow:0 0 15px rgba(0,255,136,0.7);
+  font-weight:bold;
+  cursor:pointer;
+}
+
+section,.materi-box{
+  width:88%;
+  margin:22px auto;
+  padding:24px;
+  background:rgba(5,15,35,0.88);
+  border:1px solid rgba(0,255,136,0.35);
+  border-radius:18px;
+  box-shadow:0 0 18px rgba(0,255,136,0.25);
+}
+
+h2{
+  color:#45c7ff;
+  margin-bottom:18px;
+}
+
+p,li{
+  line-height:1.7;
+  font-size:15px;
+}
+
+ul,ol{
+  margin-left:20px;
+}
+
+.tag{
+  display:inline-block;
+  margin:10px 6px 4px 0;
+  padding:8px 14px;
+  background:rgba(0,255,136,0.18);
+  color:#00ff88;
+  border-radius:8px;
+  font-weight:bold;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.tag:hover{
+  transform:scale(1.08);
+  transition:0.2s;
+  background:rgba(0,255,136,0.35);
+  box-shadow:0 0 12px #00ff88;
+}
+
+.terminal-box{
+  font-family:monospace;
+  color:#00ff88;
+  background:rgba(0,0,0,0.75);
+}
+
+footer{
+  text-align:center;
+  padding:35px 10px;
+  color:#9ca3af;
+}
+
+.ai-panel{
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(0,20,10,0.96);
+  border:1px solid #00ff88;
+  color:#00ff88;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 0 30px #00ff88;
+  z-index:9999;
+  text-align:center;
+  width:80%;
+  max-width:330px;
+}
+
+.video-mode{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background:black;
+  z-index:99999;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.video-mode video{
+  width:100vw;
+  height:100vh;
+  object-fit:cover;
+}
+
+#textCyber{
+  position:absolute;
+  bottom:6%;
+  left:5%;
+  color:#00ff88;
+  font-size:18px;
+  font-weight:bold;
+  text-shadow:0 0 15px #00ff88;
+  z-index:999999;
+  font-family:monospace;
+  animation:neonBlink 0.8s infinite;
+}
+
+@keyframes neonBlink{
+  0%,100%{opacity:1;}
+  50%{opacity:0;}
+}
+
+#popupMateri{
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:9999;
+  text-align:center;
+  width:90%;
+  max-width:330px;
+}
+
+#popupMateri video{
+  width:230px;
+  border-radius:24px;
+  border:1px solid #00ff88;
+  box-shadow:0 0 30px #00ff88;
+  margin-bottom:18px;
+}
+
+#inputBelajar{
+  width:100%;
+  padding:14px;
+  border-radius:25px;
+  border:1px solid #00ff88;
+  background:rgba(0,0,0,0.85);
+  color:#00ff88;
+  font-size:16px;
+  text-align:center;
+  outline:none;
+  box-shadow:0 0 18px rgba(0,255,136,0.8);
+}
+
+#hasilBelajar{
+  margin-top:15px;
+  color:#00ff88;
+  font-family:monospace;
+  text-shadow:0 0 10px #00ff88;
+}
+
+@media(max-width:600px){
+  h1{font-size:26px;}
+  section,.materi-box{width:92%;}
+}
+</style>
 </head>
 
 <body>
 
 <canvas id="matrixRain"></canvas>
-<div class="clock" id="clock">
-00:00:00
+
+<div class="clock" id="clock">00:00:00</div>
+
+<div id="menuNavigasi" class="menuNavigasi" style="display:none;">
+  <button onclick="tampilPopupMateri()">📚 Materi</button>
 </div>
 
-<div id="menuNavigasi"
-class="menuNavigasi"
-style="display:none;">
-
-<button onclick="bukaHalaman('materi')">
-📚 Materi
-</button>
-
-  </div>
-  <div id="utama">
-    <div id="homeContent">
-
-<div id="loadingScreen">
-
-  <h2 id="loadingText">
-    SYSTEM BOOTING...
-  </h2>
-
-  <p id="loadingStatus">
-    █ ACCESS GRANTED █
-  </p>
-
-</div>
+<div id="utama">
 
 <header>
   <h1>SYSTEM ONLINE // CYBER LEARNING</h1>
@@ -291,33 +273,24 @@ style="display:none;">
   </div>
 </header>
 
-  <section class="terminal-box">
+<section class="terminal-box">
   <h2>💻 Terminal System</h2>
   <p>&gt; SYSTEM ONLINE</p>
-<p>&gt; USER CONNECTED</p>
-<p>&gt; BUNGA AI READY</p>
-<p id="typingText">&gt; </p>
-  </section>
-  
-  <section>
+  <p>&gt; USER CONNECTED</p>
+  <p>&gt; BUNGA AI READY</p>
+  <p id="typingText">&gt;</p>
+</section>
+
+<section>
   <h2>🚀 Progress Hari Ini</h2>
   <p>Kak berhasil membuat website pertama secara gratis memakai GitHub Pages.</p>
-  <span class="tag" onclick="bukaMateri('github')">
-GitHub
-</span>
-
-<span class="tag" onclick="bukaMateri('html')">
-HTML
-</span>
-
-<span class="tag" onclick="bukaMateri('termux')">
-Termux
-</span>
+  <span class="tag">GitHub</span>
+  <span class="tag">HTML</span>
+  <span class="tag">Termux</span>
 </section>
 
 <section>
   <h2>📚 Pelajaran 1: Website Pertama</h2>
-  <p>Yang sudah dipelajari:</p>
   <ul>
     <li>✅ Membuat repository</li>
     <li>✅ Membuat file index.html</li>
@@ -328,272 +301,106 @@ Termux
 </section>
 
 <section>
-  <h2>🧠 Materi Berikutnya</h2>
-  <span class="tag" onclick="bukaMateri('html')">HTML</span>
-  <span class="tag" onclick="bukaMateri('css')">CSS</span>
-  <span class="tag" onclick="bukaMateri('termux')">Termux</span>
-  <span class="tag" onclick="bukaMateri('bot')">Bot Telegram</span>
-
-  <ol>
-    <li>HTML dasar</li>
-    <li>CSS untuk tampilan</li>
-    <li>Termux dan Python</li>
-    <li>Bot Telegram</li>
-    <li>Server sederhana</li>
-  </ol>
-</section>
-
-<section>
   <h2>🤖 Project Impian</h2>
   <p>Membangun sistem pribadi: web, bot, automation, dan AI Bunga.</p>
-  <button onclick="bukaVideo()">
-📚 Mulai Belajar
-  </button>
+  <button onclick="bukaVideo()">📚 Mulai Belajar</button>
 </section>
 
-<div id="videoMentor" class="video-mode" style="display:none;">
-
-<div id="textCyber" style="
-position:absolute;
-bottom:6%;
-left:5%;
-color:#00ff88;
-font-size:18px;
-font-weight:bold;
-font-family:monospace;
-text-shadow:0 0 15px #00ff88;
-animation: neonBlink 0.8s infinite;
-z-index:999999;">
-  SYSTEM ONLINE ⚡<br>
-  WELCOME TO BUNGA ACADEMY 🌼
-  </div>
-
-  <video id="videoPembuka" width="90%" controls autoplay>
-<source src="fiksVideoCyberLearningBunga.mp4" type="video/mp4">
-</video>
+<footer>Dibuat dari HP bersama Bunga 🌼</footer>
 
 </div>
 
-<div class="materi-box">
-  <h2 id="judulMateri">📚 Pilih Pelajaran</h2>
-<p id="isiMateri">
-Klik menu HTML, CSS, Termux, atau Bot Telegram untuk membuka materi.
-</p>
+<div id="videoMentor" class="video-mode" style="display:none;">
+  <div id="textCyber">
+    SYSTEM ONLINE ⚡<br>
+    WELCOME TO BUNGA ACADEMY 🌼
+  </div>
 
-<div id="materiDetail"></div>
+  <video id="videoPembuka" controls autoplay>
+    <source src="fiksVideoCyberLearningBunga.mp4" type="video/mp4">
+  </video>
+</div>
 
-<footer>
-  Dibuat dari HP bersama Bunga 🌼
-</footer>
+<div id="popupMateri">
+  <video autoplay muted loop playsinline>
+    <source src="BungaAiBot.mp4" type="video/mp4">
+  </video>
+
+  <input 
+    id="inputBelajar"
+    type="text"
+    placeholder="Cari materi..."
+    oninput="jawabAI()"
+  >
+
+  <div id="hasilBelajar"></div>
+</div>
 
 <div id="aiPanel" class="ai-panel">
-<h3>🤖 BUNGA AI ONLINE</h3>
+  <h3>🤖 BUNGA AI ONLINE</h3>
+  <p>🟢 Online • Siap Membantu</p>
+  <p>Halo frends 😎<br>Mau belajar apa hari ini?</p>
 
-<p id="statusAI">
-🟢 Online • Siap Membantu
-</p>
-
-<p id="pesanAI">
-Halo frends 😎<br>
-Mau belajar apa hari ini?
-</p>
-
-<p>Pilih materi belajar:</p>
-  <button onclick="bukaMateri('html')">
-  HTML
-  </button>
-
-  <button onclick="bukaMateri('css')">
-  CSS
-  </button>
-
-  <button onclick="bukaMateri('termux')">
-  Termux
-  </button>
-
-  <button onclick="bukaMateri('bot')">
-  Bot Telegram
-  </button>
-
-<button onclick="
-tutupAI();
-bukaHalaman('materi');
-">
-📚 Mulai Belajar
-</button>
-
-  <button onclick="tutupAI()">
-  Tutup
-  </button>
+  <button onclick="tutupAI(); bukaVideo();">📚 Mulai Belajar</button>
+  <br><br>
+  <button onclick="tutupAI()">Tutup</button>
 </div>
 
 <script>
-function updateClock() {
+function updateClock(){
   const now = new Date();
   document.getElementById("clock").innerText =
-    now.toLocaleTimeString("id-ID");
+  now.toLocaleTimeString("id-ID");
 }
-setInterval(updateClock, 1000);
+setInterval(updateClock,1000);
 updateClock();
 
-function bukaMateri(pelajaran) {
-
-  let judul = "";
-  let isi = "";
-
-  if (pelajaran === "html") {
-    judul = "📘 Pelajaran HTML";
-
-    isi = `
-HTML adalah dasar website.
-
-Fungsi:
-• Membuat struktur website
-
-Contoh:
-<h1>Halo Dunia</h1>
-
-HTML dipakai untuk judul, teks, tombol, gambar, dll.
-`;
-
-  } else if (pelajaran === "css") {
-    judul = "🎨 Pelajaran CSS";
-
-    isi = `
-CSS digunakan untuk mempercantik website.
-
-Fungsi:
-• Mengatur warna
-• Ukuran tulisan
-• Posisi tampilan
-
-Contoh:
-h1 {
- color: green;
+function bukaAI(){
+  document.getElementById("aiPanel").style.display = "block";
 }
 
-CSS bikin web jadi keren dan tidak polos.
-`;
-
-  } else if (pelajaran === "termux") {
-    judul = "💻 Pelajaran Termux";
-
-    isi = `
-Termux adalah terminal Linux di Android.
-
-Fungsi:
-• Menjalankan Python
-• Membuat bot Telegram
-• Menjalankan script
-
-Perintah awal:
-pkg update
-pkg upgrade
-
-Termux cocok untuk belajar coding dari HP.
-`;
-
-  } else if (pelajaran === "bot") {
-    judul = "🤖 Pelajaran Bot Telegram";
-
-    isi = `
-Bot Telegram adalah robot otomatis di Telegram.
-
-Fungsi:
-• Membalas chat otomatis
-• Kirim pesan otomatis
-• Menjalankan perintah
-
-Contoh:
-Halo = bot membalas otomatis
-
-Bot dibuat memakai:
-• BotFather
-• Token Bot
-• Python / Termux
-
-Cocok untuk belajar automation dari HP.
-`;
-
-  } else if (pelajaran === "github") {
-    judul = "🐙 Pelajaran GitHub";
-
-    isi = `
-GitHub adalah tempat menyimpan project coding online.
-
-Fungsi:
-• Menyimpan website
-• Backup project
-• Membuat web gratis
-
-Langkah dasar:
-1. Buat Repository
-2. Upload index.html
-3. Aktifkan GitHub Pages
-
-GitHub cocok untuk membuat website gratis dari HP.
-`;
-  }
-
-  document.getElementById("judulMateri").innerText = judul;
-document.getElementById("isiMateri").innerText = isi;
-
-document.getElementById("pesanAI")
-.innerHTML =
-"😎 Sip frends! Sekarang belajar " +
-judul;
-}
-
-function bukaVideo() {
-
-  document.querySelector("header")
-  .style.display = "none";
-
-  document.querySelectorAll("section")
-  .forEach(sec => {
-    sec.style.display = "none";
-  });
-
-  document.querySelector("footer")
-  .style.display = "none";
-
-  document.getElementById("videoMentor")
-  .style.display = "block";
-}
-
-const video =
-document.getElementById("videoPembuka");
-
-video.addEventListener("ended", () => {
-
-  document.getElementById("videoMentor")
-  .style.display = "none";
-
-  document.getElementById("materi")
-.style.display = "block";
-  
-  document.querySelector("header")
-.style.display = "none";
-  
-  document.querySelector(".materi-box")
-  .style.display = "block";
-
-  document.querySelector("footer")
-.style.display = "block";
-
-document.getElementById("menuNavigasi")
-.style.display = "block";
-
-bukaHalaman("materi");
-});
-  
-function bukaAI() {
-  document.getElementById("aiPanel")
-  .style.display = "block";
-  }
-
-function tutupAI() {
+function tutupAI(){
   document.getElementById("aiPanel").style.display = "none";
+}
+
+function bukaVideo(){
+  document.getElementById("utama").style.display = "none";
+  document.getElementById("videoMentor").style.display = "flex";
+}
+
+const video = document.getElementById("videoPembuka");
+
+video.addEventListener("ended", function(){
+  document.getElementById("videoMentor").style.display = "none";
+  document.getElementById("menuNavigasi").style.display = "block";
+});
+
+function tampilPopupMateri(){
+  document.getElementById("popupMateri").style.display = "block";
+}
+
+function jawabAI(){
+  const input = document.getElementById("inputBelajar").value.toLowerCase();
+  const hasil = document.getElementById("hasilBelajar");
+
+  if(input.includes("html")){
+    hasil.innerHTML = "📘 HTML adalah dasar untuk membuat struktur website.";
+  } 
+  else if(input.includes("css")){
+    hasil.innerHTML = "🎨 CSS dipakai untuk mempercantik tampilan website.";
+  } 
+  else if(input.includes("termux")){
+    hasil.innerHTML = "💻 Termux adalah terminal Linux untuk Android.";
+  } 
+  else if(input.includes("bot")){
+    hasil.innerHTML = "🤖 Bot Telegram bisa membalas pesan otomatis.";
+  } 
+  else if(input.length > 0){
+    hasil.innerHTML = "🔍 Materi belum ditemukan.";
+  } 
+  else{
+    hasil.innerHTML = "";
+  }
 }
 
 const canvas = document.getElementById("matrixRain");
@@ -608,22 +415,22 @@ const fontSize = 18;
 let columns = canvas.width / fontSize;
 let drops = [];
 
-for (let x = 0; x < columns; x++) {
+for(let x = 0; x < columns; x++){
   drops[x] = 1;
 }
 
-function drawMatrix() {
+function drawMatrix(){
   ctx.fillStyle = "rgba(0,0,0,0.08)";
   ctx.fillRect(0,0,canvas.width,canvas.height);
 
   ctx.fillStyle = "#00ff00";
   ctx.font = fontSize + "px monospace";
 
-  for (let i = 0; i < drops.length; i++) {
+  for(let i = 0; i < drops.length; i++){
     const text = chars[Math.floor(Math.random() * chars.length)];
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975){
       drops[i] = 0;
     }
 
@@ -631,8 +438,20 @@ function drawMatrix() {
   }
 }
 
-setInterval(drawMatrix, 35);
-  const pesanTerminal = [
+setInterval(drawMatrix,35);
+
+window.addEventListener("resize", function(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  columns = canvas.width / fontSize;
+  drops = [];
+
+  for(let x = 0; x < columns; x++){
+    drops[x] = 1;
+  }
+});
+
+const pesanTerminal = [
   "> SYSTEM ONLINE",
   "> USER CONNECTED",
   "> BUNGA AI READY",
@@ -643,147 +462,25 @@ setInterval(drawMatrix, 35);
 let indexPesan = 0;
 let indexHuruf = 0;
 
-function ketikTerminal() {
+function ketikTerminal(){
   const target = document.getElementById("typingText");
   const pesan = pesanTerminal[indexPesan];
 
-  target.innerText = pesan.substring(0, indexHuruf);
-
+  target.innerText = pesan.substring(0,indexHuruf);
   indexHuruf++;
 
-  if (indexHuruf > pesan.length) {
+  if(indexHuruf > pesan.length){
     indexHuruf = 0;
     indexPesan++;
 
-    if (indexPesan >= pesanTerminal.length) {
+    if(indexPesan >= pesanTerminal.length){
       indexPesan = 0;
     }
   }
 }
 
-setInterval(ketikTerminal, 120);
-
-/* TEMPEL DI SINI */
-const loadingPesan = [
-  "SYSTEM BOOTING...",
-  "CHECKING DATABASE...",
-  "CONNECTING AI...",
-  "ACCESS GRANTED"
-];
-
-let loadIndex = 0;
-
-const loadingAnim = setInterval(() => {
-
-  document.getElementById("loadingText")
-  .innerText = loadingPesan[loadIndex];
-
-  loadIndex++;
-
-  if(loadIndex >= loadingPesan.length){
-    clearInterval(loadingAnim);
-  }
-
-}, 450);
-
-setTimeout(() => {
-  document.getElementById("loadingScreen")
-  .style.display = "none";
-}, 2200);
-
-/* sebelum ini */
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  columns = canvas.width / fontSize;
-  drops = [];
-
-  for (let x = 0; x < columns; x++) {
-    drops[x] = 1;
-  }
-});
+setInterval(ketikTerminal,120);
 </script>
-  
-</div>
-  
-</div>
-      
-<div id="video" style="display:none;" class="materi-box">
 
-<h2>🎥 Video Pembelajaran</h2>
-
-<p>Di sini nanti video mentor Bunga tampil.</p>
-
-</div>
-
-<div id="materi" style="display:none;" class="materi-box">
-
-  <div style="text-align:center; margin-bottom:20px;">
-
-  <video autoplay muted loop playsinline
-  style="
-  width:220px;
-  border-radius:22px;
-  box-shadow:0 0 25px #00ff88;
-  border:1px solid #00ff88;">
-    <source src="BungaAiBot.mp4" type="video/mp4">
-  </video>
-
-  <h2>🤖 Bunga AI Mentor</h2>
-  <p>🟢 Online • Siap Mengajar</p>
-
-  </div>
-  
-<input id="inputBelajar"
-type="text"
-placeholder="contoh: belajar html"
-style="
-width:80%;
-padding:12px;
-border-radius:10px;
-border:none;
-font-size:16px;">
-
-<br><br>
-
-<button onclick="jawabAI()">
-Cari Materi
-</button>
-
-<div id="hasilBelajar"
-style="margin-top:20px;">
-</div>
-
-</div>
-  <script>
-function bukaHalaman(nama){
-
-document.getElementById("utama")
-.style.display = "none";
-
-document.getElementById("video")
-.style.display = "none";
-
-document.getElementById("materi")
-.style.display = "none";
-
-if(nama === "utama"){
-document.getElementById("utama")
-.style.display = "block";
-}
-
-if(nama === "video"){
-document.getElementById("video")
-.style.display = "block";
-}
-
-if(nama === "materi"){
-document.getElementById("materi")
-.style.display = "block";
-}
-
-    }
-</script>
-  
 </body>
-</html>
+  </html>
