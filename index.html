@@ -3,17 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SYSTEM ONLINE // CYBER LEARNING</title>
+<title>Bunga AI // Cyber Learning</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#020b08;
   color:white;
   overflow-x:hidden;
@@ -37,7 +33,7 @@ body{
   border:1px solid #00ff88;
   padding:8px 12px;
   border-radius:10px;
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,.5);
   box-shadow:0 0 12px #00ff88;
   z-index:10;
   font-weight:bold;
@@ -64,20 +60,20 @@ button{
 header{
   text-align:center;
   padding:45px 20px;
-  background:rgba(0,20,10,0.25);
+  background:rgba(0,20,10,.25);
   border-bottom:1px solid #00ff88;
-  box-shadow:0 0 18px rgba(0,255,136,0.4);
+  box-shadow:0 0 18px rgba(0,255,136,.4);
 }
 
 h1{
   color:#00ff88;
-  font-size:34px;
-  letter-spacing:3px;
+  font-size:32px;
+  letter-spacing:2px;
   text-shadow:0 0 10px #00ff88,0 0 25px #00ff88;
 }
 
 .subtitle{
-  margin-top:18px;
+  margin-top:15px;
   color:#b7c7c2;
   font-size:14px;
 }
@@ -89,20 +85,20 @@ h1{
   color:#00ff88;
   border:1px solid #00ff88;
   border-radius:25px;
-  background:rgba(0,255,136,0.08);
-  box-shadow:0 0 15px rgba(0,255,136,0.7);
+  background:rgba(0,255,136,.08);
+  box-shadow:0 0 15px rgba(0,255,136,.7);
   font-weight:bold;
   cursor:pointer;
 }
 
-section,.materi-box{
+section{
   width:88%;
   margin:22px auto;
   padding:24px;
-  background:rgba(5,15,35,0.88);
-  border:1px solid rgba(0,255,136,0.35);
+  background:rgba(5,15,35,.88);
+  border:1px solid rgba(0,255,136,.35);
   border-radius:18px;
-  box-shadow:0 0 18px rgba(0,255,136,0.25);
+  box-shadow:0 0 18px rgba(0,255,136,.25);
 }
 
 h2{
@@ -115,33 +111,23 @@ p,li{
   font-size:15px;
 }
 
-ul,ol{
-  margin-left:20px;
-}
+ul{margin-left:20px}
 
 .tag{
   display:inline-block;
   margin:10px 6px 4px 0;
   padding:8px 14px;
-  background:rgba(0,255,136,0.18);
+  background:rgba(0,255,136,.18);
   color:#00ff88;
   border-radius:8px;
   font-weight:bold;
   font-size:13px;
-  cursor:pointer;
-}
-
-.tag:hover{
-  transform:scale(1.08);
-  transition:0.2s;
-  background:rgba(0,255,136,0.35);
-  box-shadow:0 0 12px #00ff88;
 }
 
 .terminal-box{
   font-family:monospace;
   color:#00ff88;
-  background:rgba(0,0,0,0.75);
+  background:rgba(0,0,0,.75);
 }
 
 footer{
@@ -156,7 +142,7 @@ footer{
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  background:rgba(0,20,10,0.96);
+  background:rgba(0,20,10,.97);
   border:1px solid #00ff88;
   color:#00ff88;
   padding:25px;
@@ -164,8 +150,8 @@ footer{
   box-shadow:0 0 30px #00ff88;
   z-index:9999;
   text-align:center;
-  width:80%;
-  max-width:330px;
+  width:86%;
+  max-width:360px;
 }
 
 .video-mode{
@@ -197,57 +183,99 @@ footer{
   text-shadow:0 0 15px #00ff88;
   z-index:999999;
   font-family:monospace;
-  animation:neonBlink 0.8s infinite;
+  animation:neonBlink .8s infinite;
 }
 
 @keyframes neonBlink{
-  0%,100%{opacity:1;}
-  50%{opacity:0;}
+  0%,100%{opacity:1}
+  50%{opacity:0}
 }
 
 #popupMateri{
   display:none;
   position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+  inset:0;
   z-index:9999;
-  text-align:center;
-  width:90%;
-  max-width:330px;
+  background:rgba(0,0,0,.8);
+  padding:22px;
+  overflow:auto;
 }
 
-#popupMateri video{
+.chatBox{
+  width:94%;
+  max-width:430px;
+  margin:45px auto;
+  text-align:center;
+}
+
+.chatBox video{
   width:230px;
   border-radius:24px;
   border:1px solid #00ff88;
   box-shadow:0 0 30px #00ff88;
-  margin-bottom:18px;
+  margin-bottom:15px;
+}
+
+.chatArea{
+  height:260px;
+  overflow-y:auto;
+  background:rgba(0,0,0,.72);
+  border:1px solid #00ff88;
+  border-radius:16px;
+  padding:12px;
+  margin-bottom:12px;
+  text-align:left;
+  box-shadow:0 0 18px rgba(0,255,136,.55);
+}
+
+.msg{
+  margin:8px 0;
+  padding:10px 12px;
+  border-radius:12px;
+  line-height:1.5;
+  font-size:14px;
+  white-space:pre-wrap;
+}
+
+.user{
+  background:rgba(0,255,136,.18);
+  color:#fff;
+  margin-left:25px;
+}
+
+.bot{
+  background:rgba(69,199,255,.14);
+  color:#00ff88;
+  margin-right:25px;
+}
+
+.inputRow{
+  display:flex;
+  gap:8px;
 }
 
 #inputBelajar{
-  width:100%;
+  flex:1;
   padding:14px;
   border-radius:25px;
   border:1px solid #00ff88;
-  background:rgba(0,0,0,0.85);
+  background:rgba(0,0,0,.85);
   color:#00ff88;
-  font-size:16px;
-  text-align:center;
+  font-size:15px;
   outline:none;
-  box-shadow:0 0 18px rgba(0,255,136,0.8);
+  box-shadow:0 0 18px rgba(0,255,136,.8);
 }
 
-#hasilBelajar{
-  margin-top:15px;
+.closeBtn{
+  margin-top:12px;
+  background:#111;
   color:#00ff88;
-  font-family:monospace;
-  text-shadow:0 0 10px #00ff88;
+  border:1px solid #00ff88;
 }
 
 @media(max-width:600px){
-  h1{font-size:26px;}
-  section,.materi-box{width:92%;}
+  h1{font-size:25px}
+  section{width:92%}
 }
 </style>
 </head>
@@ -255,7 +283,6 @@ footer{
 <body>
 
 <canvas id="matrixRain"></canvas>
-
 <div class="clock" id="clock">00:00:00</div>
 
 <div id="menuNavigasi" class="menuNavigasi" style="display:none;">
@@ -263,14 +290,11 @@ footer{
 </div>
 
 <div id="utama">
-
 <header>
   <h1>SYSTEM ONLINE // CYBER LEARNING</h1>
-  <p class="subtitle">Catatan belajar coding, Termux, web, bot, dan server dari nol.</p>
+  <p class="subtitle">Catatan belajar coding, Termux, web, bot, server, dan AI Bunga.</p>
 
-  <div class="ai-menu" onclick="bukaAI()">
-    🤖 Bunga AI Online
-  </div>
+  <div class="ai-menu" onclick="bukaAI()">🤖 Bunga AI Online</div>
 </header>
 
 <section class="terminal-box">
@@ -287,6 +311,7 @@ footer{
   <span class="tag">GitHub</span>
   <span class="tag">HTML</span>
   <span class="tag">Termux</span>
+  <span class="tag">AI</span>
 </section>
 
 <section>
@@ -307,7 +332,6 @@ footer{
 </section>
 
 <footer>Dibuat dari HP bersama Bunga 🌼</footer>
-
 </div>
 
 <div id="videoMentor" class="video-mode" style="display:none;">
@@ -322,24 +346,29 @@ footer{
 </div>
 
 <div id="popupMateri">
-  <video autoplay muted loop playsinline>
-    <source src="BungaAiBot.mp4" type="video/mp4">
-  </video>
+  <div class="chatBox">
+    <video autoplay muted loop playsinline>
+      <source src="BungaAiBot.mp4" type="video/mp4">
+    </video>
 
-  <input 
-    id="inputBelajar"
-    type="text"
-    placeholder="Cari materi..."
-    oninput="jawabAI()"
-  >
+    <div class="chatArea" id="chatArea">
+      <div class="msg bot">Halo kak, Bunga online 🌼
+Mau tanya materi apa hari ini?</div>
+    </div>
 
-  <div id="hasilBelajar"></div>
+    <div class="inputRow">
+      <input id="inputBelajar" type="text" placeholder="Tanya Bunga..." onkeydown="enterKirim(event)">
+      <button onclick="kirimPertanyaan()">Kirim</button>
+    </div>
+
+    <button class="closeBtn" onclick="tutupPopupMateri()">Tutup</button>
+  </div>
 </div>
 
 <div id="aiPanel" class="ai-panel">
   <h3>🤖 BUNGA AI ONLINE</h3>
   <p>🟢 Online • Siap Membantu</p>
-  <p>Halo frends 😎<br>Mau belajar apa hari ini?</p>
+  <p>Halo kak 😌<br>Mau belajar apa hari ini?</p>
 
   <button onclick="tutupAI(); bukaVideo();">📚 Mulai Belajar</button>
   <br><br>
@@ -347,14 +376,24 @@ footer{
 </div>
 
 <script>
+/* =========================
+   AQ.Ab8RN6L3NBv2RaEAUY7_CCW_1kib4Yso-kNRJllHUwNyXoa6PQ
+   ========================= */
+const API_KEY = "AQ.Ab8RN6L3NBv2RaEAUY7_CCW_1kib4Yso-kNRJllHUwNyXoa6PQ";
+
+/* =========================
+   JAM
+   ========================= */
 function updateClock(){
   const now = new Date();
-  document.getElementById("clock").innerText =
-  now.toLocaleTimeString("id-ID");
+  document.getElementById("clock").innerText = now.toLocaleTimeString("id-ID");
 }
 setInterval(updateClock,1000);
 updateClock();
 
+/* =========================
+   PANEL
+   ========================= */
 function bukaAI(){
   document.getElementById("aiPanel").style.display = "block";
 }
@@ -379,37 +418,97 @@ function tampilPopupMateri(){
   document.getElementById("popupMateri").style.display = "block";
 }
 
-function jawabAI(){
-  const input = document.getElementById("inputBelajar").value.toLowerCase();
-  const hasil = document.getElementById("hasilBelajar");
+function tutupPopupMateri(){
+  document.getElementById("popupMateri").style.display = "none";
+}
 
-  if(input.includes("html")){
-    hasil.innerHTML = "📘 HTML adalah dasar untuk membuat struktur website.";
-  } 
-  else if(input.includes("css")){
-    hasil.innerHTML = "🎨 CSS dipakai untuk mempercantik tampilan website.";
-  } 
-  else if(input.includes("termux")){
-    hasil.innerHTML = "💻 Termux adalah terminal Linux untuk Android.";
-  } 
-  else if(input.includes("bot")){
-    hasil.innerHTML = "🤖 Bot Telegram bisa membalas pesan otomatis.";
-  } 
-  else if(input.length > 0){
-    hasil.innerHTML = "🔍 Materi belum ditemukan.";
-  } 
-  else{
-    hasil.innerHTML = "";
+/* =========================
+   BUNGA AI GEMINI
+   ========================= */
+const chatArea = document.getElementById("chatArea");
+const inputBelajar = document.getElementById("inputBelajar");
+
+function tambahPesan(teks, siapa){
+  const div = document.createElement("div");
+  div.className = "msg " + siapa;
+  div.innerText = teks;
+  chatArea.appendChild(div);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+function enterKirim(e){
+  if(e.key === "Enter"){
+    kirimPertanyaan();
   }
 }
 
+async function kirimPertanyaan(){
+  const pertanyaan = inputBelajar.value.trim();
+  if(!pertanyaan) return;
+
+  tambahPesan(pertanyaan, "user");
+  inputBelajar.value = "";
+  tambahPesan("Bunga mikir dulu ya kak...", "bot");
+
+  try{
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY,
+      {
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+          contents:[
+            {
+              role:"user",
+              parts:[
+                {
+                  text:
+`Kamu adalah Bunga AI, teman belajar cyber learning.
+Jawab dengan bahasa Indonesia yang santai, jelas, dan tidak terlalu panjang.
+Kalau user bertanya coding, jelaskan step-by-step.
+Kalau user bertanya materi, jawab seperti mentor yang ramah.
+Pertanyaan user: ${pertanyaan}`
+                }
+              ]
+            }
+          ]
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    const semuaBot = document.querySelectorAll(".bot");
+    semuaBot[semuaBot.length - 1].remove();
+
+    if(data.error){
+      tambahPesan("Maaf kak, API error: " + data.error.message, "bot");
+      return;
+    }
+
+    const jawaban = data.candidates?.[0]?.content?.parts?.[0]?.text || "Bunga belum bisa jawab itu kak.";
+    tambahPesan(jawaban, "bot");
+
+  }catch(error){
+    const semuaBot = document.querySelectorAll(".bot");
+    semuaBot[semuaBot.length - 1].remove();
+
+    tambahPesan("Koneksi error kak. Coba cek internet atau API key-nya.", "bot");
+  }
+}
+
+/* =========================
+   MATRIX RAIN
+   ========================= */
 const canvas = document.getElementById("matrixRain");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const huruf = "BUNGADEDEVISSTERMUXBOTHTMLCSS";
+const huruf = "BUNGADEVTERMUXBOTHTMLCSSAICYBER";
 const chars = huruf.split("");
 const fontSize = 18;
 let columns = canvas.width / fontSize;
@@ -451,11 +550,14 @@ window.addEventListener("resize", function(){
   }
 });
 
+/* =========================
+   TERMINAL TYPING
+   ========================= */
 const pesanTerminal = [
   "> SYSTEM ONLINE",
   "> USER CONNECTED",
   "> BUNGA AI READY",
-  "> ACCESS DATABASE",
+  "> GEMINI API CONNECTED",
   "> WAITING COMMAND..."
 ];
 
@@ -483,4 +585,4 @@ setInterval(ketikTerminal,120);
 </script>
 
 </body>
-  </html>
+</html>
